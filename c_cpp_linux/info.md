@@ -258,3 +258,16 @@ int main() {
   }
 }
 ```
+
+# Memory Allocation in C
+
+- https://www.geeksforgeeks.org/c/dynamic-memory-allocation-in-c-using-malloc-calloc-free-and-realloc/
+- https://medium.com/@adebanjoemmanuel01/memory-allocation-in-c-2834a7a29200
+- https://en.wikipedia.org/wiki/C_dynamic_memory_allocation
+- https://stackoverflow.com/questions/64029219/why-does-malloc-call-mmap-and-brk-interchangeably
+- https://www.linkedin.com/pulse/understanding-memory-allocation-linux-relation-brk-pratap-singh-y3icc
+
+> - malloc calloc free realloc
+> - brk
+> - sbrk
+> - mmap
