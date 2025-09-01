@@ -218,12 +218,12 @@ int main()
 - https://en.wikipedia.org/wiki/Sorting_algorithm#:~:text=Stable%20sort%20algorithms%20sort%20equal,versions%20of%20the%20original%20list
 
 > Key Differences
-- Stability: std::sort() is not stable, meaning the relative order of equivalent elements is not guaranteed to be preserved. std::stable_sort(), on the other hand, guarantees that equivalent elements retain their relative order.
-- Performance: std::sort() is generally faster than std::stable_sort() due to fewer constraints. It uses an introspective sort algorithm, combining quicksort, heapsort, and insertion sort. std::stable_sort() typically uses a combination of merge sort, which ensures stability but with a slightly higher time complexity and potentially higher memory usage.
+> - Stability: std::sort() is not stable, meaning the relative order of equivalent elements is not guaranteed to be preserved. std::stable_sort(), on the other hand, guarantees that equivalent elements retain their relative order.
+> - Performance: std::sort() is generally faster than std::stable_sort() due to fewer constraints. It uses an introspective sort algorithm, combining quicksort, heapsort, and insertion sort. std::stable_sort() typically uses a combination of merge sort, which ensures stability but with a slightly higher time complexity and potentially higher memory usage.
 >
 > When to Use Which
-- Use std::sort() when performance is critical and the order of equivalent elements does not matter.
-- Use std::stable_sort() when you need to maintain the relative order of equivalent elements.
+> - Use std::sort() when performance is critical and the order of equivalent elements does not matter.
+> - Use std::stable_sort() when you need to maintain the relative order of equivalent elements.
 
 ```c++
 #include <algorithm>
