@@ -427,4 +427,15 @@ uint32_t __builtin_bswap32 (uint32_t x)
 
 ![Image!](https://research.swtch.com/mem-tso@2x.png "Image")
 
+# Compiling a C Program
+
+- https://www.geeksforgeeks.org/c/compiling-a-c-program-behind-the-scenes/
+- https://unstop.com/blog/compilation-in-c
+- https://www.tutorialspoint.com/cprogramming/c_compilation_process.htm
+- https://users.cms.caltech.edu/~mvanier/CS11_C/misc/compiling_c.html
+
+![Image!](https://media.geeksforgeeks.org/wp-content/uploads/20230404112946/Compilation-Process-in-C.png "Image")
+![Image!](https://d8it4huxumps7.cloudfront.net/uploads/images/655df16819a37_compilation_in_c_01.jpg?d=2000x2000 "Image")
+![Image!](https://www.tutorialspoint.com/cprogramming/images/compilation-process.jpg "Image")
+
 
