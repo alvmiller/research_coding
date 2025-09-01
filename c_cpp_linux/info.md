@@ -277,3 +277,33 @@ int main() {
 ![Image!](https://media.geeksforgeeks.org/wp-content/uploads/20250305233229499334/Malloc-function-in-c.webp "Image")
 ![Image!](https://notes.shichao.io/tlpi/figure_6-1.png "Image")
 ![Image!](https://media.licdn.com/dms/image/v2/D5612AQE4ObNxiJM2Gg/article-cover_image-shrink_600_2000/B56ZbYWmyTGsAQ-/0/1747386528017?e=2147483647&v=beta&t=qveaeZ0Mx52wVLLfSfmJYOJss12-Df1Fxtsb0iMTixc "Image")
+
+# Comparison of C++ and Posix Threads
+
+- https://www.linkedin.com/pulse/comparision-c-posix-threads-amit-nadiger
+- https://www.linkedin.com/pulse/why-c-threads-matter-despite-existence-posix-deepesh-menon-p-m-yyuyc
+
+# Man-in-the-Middle
+
+- https://medium.com/@mesibo-real-time-communication/enhancing-signals-end-to-end-encryption-algorithm-eliminating-man-in-the-middle-and-other-7ecb5b23a3df
+- https://heimdalsecurity.com/blog/man-in-the-middle-mitm-attack/
+- https://medium.com/@dillihangrae/understanding-diffie-hellman-key-exchange-and-man-in-the-middle-attacks-f9b08abe2c20
+- https://www.geeksforgeeks.org/python/man-in-the-middle-attack-in-diffie-hellman-key-exchange/
+- https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange
+- https://www.linkedin.com/pulse/man-middle-attack-diffie-hellman-key-exchange-protocol-tiago-sousa-7fdhf
+- https://dev.to/tiago_sousa_4baece16501be/man-in-the-middle-attack-to-the-diffie-hellman-key-exchange-g-parameter-injection-variant-4oe6
+- https://clumsylulz.medium.com/cryptoclient-a-secure-p2p-chat-system-9e85d2de3762
+- https://www.outseer.com/fraud-protection/man-in-the-middle-cyberattacks/
+- https://www.veracode.com/security/man-middle-attack/
+- https://www.vaadata.com/blog/what-is-a-man-in-the-middle-mitm-attack-types-and-security-best-practices/
+- https://specopssoft.com/blog/man-in-the-middle-mitm-guide/
+- https://sosafe-awareness.com/glossary/man-in-the-middle-attack/
+- https://www.strongdm.com/blog/man-in-the-middle-attack-prevention
+- https://www.memcyco.com/6-ways-to-prevent-man-in-the-middle-mitm-attacks/
+
+![Image!](https://www.veracode.com/wp-content/uploads/2025/01/veracode-appsec_man-middle-attack.png "Image")
+![Image!](https://upload.wikimedia.org/wikipedia/commons/c/c8/DiffieHellman.png "Image")
+![Image!](https://www.memcyco.com/wp-content/uploads/2024/11/image2-5.png "Image")
+![Image!](https://miro.medium.com/v2/resize:fit:1100/format:webp/1*RgYY52UrcONkQlYD524uTw.png "Image")
+![Image!](https://miro.medium.com/v2/resize:fit:1100/format:webp/1*X3UM_5aqD5q6GEn0C8Rtng.png "Image")
+![Image!](https://miro.medium.com/v2/resize:fit:1100/format:webp/0*7flHdkStmAVmxqae.jpg "Image")
