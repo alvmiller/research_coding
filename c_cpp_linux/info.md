@@ -267,13 +267,32 @@ int main() {
 - https://stackoverflow.com/questions/64029219/why-does-malloc-call-mmap-and-brk-interchangeably
 - https://www.linkedin.com/pulse/understanding-memory-allocation-linux-relation-brk-pratap-singh-y3icc
 - https://notes.shichao.io/tlpi/ch7/
+- https://man7.org/linux/man-pages/man3/alloca.3.html
+- https://scottc130.medium.com/understanding-heap-memory-allocation-in-c-sbrk-and-brk-d9b95c344cbc
+- https://www2.lawrence.edu/fast/GREGGJ/CMSC480/malloc/malloc.html
+- https://www.w3schools.com/c/c_memory_allocate.php
+- https://www.geeksforgeeks.org/c/dynamic-memory-allocation-in-c-using-malloc-calloc-free-and-realloc/
+- https://medium.com/@Dev_Frank/c-memory-management-allocation-99ccb4f36386
+- https://www.w3schools.com/c/c_memory_management.php
+- https://www.w3schools.com/c/c_memory_allocate.php
+- https://www.w3schools.com/c/c_memory_access.php
+- https://www.w3schools.com/c/c_memory_reallocate.php
+- https://www.w3schools.com/c/c_memory_deallocate.php
+- https://www.w3schools.com/c/c_memory_reallife.php
+- https://www.programiz.com/c-programming/c-dynamic-memory-allocation
+- https://medium.com/@JohanneA/adventures-in-c-dynamically-allocated-stack-5ef44d3db140
+- https://en.wikipedia.org/wiki/Stack-based_memory_allocation
+- https://www.geeksforgeeks.org/dsa/stack-vs-heap-memory-allocation/
+- https://www.cs.cornell.edu/courses/cs3410/2025sp/notes/mem.html
 - 
 
+> - alloca
 > - malloc calloc free realloc
 > - brk
 > - sbrk
 > - mmap
 
+![Image!](https://www2.lawrence.edu/fast/GREGGJ/CMSC480/malloc/malloc1.png "Image")
 ![Image!](https://media.geeksforgeeks.org/wp-content/uploads/20250305233229499334/Malloc-function-in-c.webp "Image")
 ![Image!](https://notes.shichao.io/tlpi/figure_6-1.png "Image")
 ![Image!](https://media.licdn.com/dms/image/v2/D5612AQE4ObNxiJM2Gg/article-cover_image-shrink_600_2000/B56ZbYWmyTGsAQ-/0/1747386528017?e=2147483647&v=beta&t=qveaeZ0Mx52wVLLfSfmJYOJss12-Df1Fxtsb0iMTixc "Image")
@@ -333,3 +352,79 @@ int main() {
 ```c
 uint32_t __builtin_bswap32 (uint32_t x) 
 ```
+
+# Linux Performance
+
+- https://www.brendangregg.com/linuxperf.html
+- https://medium.com/@chrishantha/linux-performance-observability-tools-19ae2328f87f
+- https://www.brendangregg.com/Slides/Velocity2015_LinuxPerfTools.pdf
+- https://serverauth.com/posts/linux-performance-monitoring-a-comprehensive-guide
+- https://skillupwithsachin.medium.com/observability-in-linux-performance-a-visual-guide-4fae21796763
+
+![Image!](https://www.brendangregg.com/Perf/linux_observability_tools.png "Image")
+![Image!](https://www.brendangregg.com/Perf/linux_static_tools.png "Image")
+![Image!](https://www.brendangregg.com/Perf/bpf_book_tools.png "Image")
+![Image!](https://www.brendangregg.com/Perf/linux_bpftrace_tools.png "Image")
+![Image!](https://www.brendangregg.com/Perf/linux_observability_sar.png "Image")
+![Image!](https://www.brendangregg.com/Perf/linux_benchmarking_tools.png "Image")
+![Image!](https://www.brendangregg.com/Perf/linux_tuning_tools.png "Image")
+![Image!](https://www.brendangregg.com/Perf/perf-tools_2016.png "Image")
+![Image!](https://www.brendangregg.com/Perf/bcc_tracing_tools.png "Image")
+
+# FS
+
+- https://www.sqlite.org/atomiccommit.html
+- https://www3.nd.edu/~pbui/teaching/cse.30341.fa17/project06.html
+- https://github.com/littlefs-project/littlefs
+- https://randomnerdtutorials.com/esp32-write-data-littlefs-arduino/
+- https://randomnerdtutorials.com/esp32-web-server-spiffs-spi-flash-file-system/
+- https://hackaday.com/2023/10/04/littlefs-the-emphasis-is-on-little/
+- https://github.com/littlefs-project/littlefs/blob/master/DESIGN.md
+- https://github.com/littlefs-project/littlefs/blob/master/README.md
+- https://www.thevtool.com/mounting-littlefs-on-linux-machine/
+- https://docs.nordicsemi.com/bundle/ncs-2.9.0-nRF54H20-1/page/zephyr/samples/subsys/fs/littlefs/README.html
+- https://www.techrm.com/file-management-on-esp32-spiffs-and-littlefs-compared/
+- https://www.codembit.com/blogs/embedded/ekra6m4/littlefs/how_to_use_littlefs_with_cmsis_flash_driver.html#google_vignette
+- https://docs.nordicsemi.com/bundle/ncs-2.5.1/page/zephyr/samples/subsys/fs/littlefs/README.html
+- https://docs.zephyrproject.org/latest/samples/subsys/fs/littlefs/README.html
+- https://os.mbed.com/docs/mbed-os/v6.16/apis/littlefilesystem.html
+- https://www.instructables.com/Introduction-to-LittleFs-Write-LittleFs-Read-Littl/
+- https://github.com/wreyford/demo_esp_littlefs
+- https://medium.com/engineering-iot/using-littlefs-for-file-operations-on-esp32-with-platformio-01f203be751d
+- https://randomnerdtutorials.com/esp32-write-data-littlefs-arduino/
+- https://arduino-tex.ru/news/202/ustanovka-zagruzchika-littlefs-v-arduino-ide-2-dlya-zagruzki.html
+- https://randomnerdtutorials.com/esp32-write-data-littlefs-arduino/
+- https://randomnerdtutorials.com/esp32-littlefs-arduino-ide/
+- https://infineon.github.io/mtb-littlefs/api_reference_manual/html/index.html
+- https://docs.nordicsemi.com/bundle/ncs-2.6.3/page/zephyr/samples/subsys/fs/littlefs/README.html
+- https://fids.git-pages.uni-regensburg.de/developer-skills/02_file_system.html
+- https://pages.cs.wisc.edu/~jhe/eurosys17-he.pdf
+- https://www.enterprisedb.com/blog/putting-postgresql-tablespace-ramdisk-risks-all-your-data
+- https://github.com/google/leveldb
+- https://scientific-zheng.medium.com/as-a-programmer-you-need-to-understand-these-about-files-b542c60d9285
+
+- https://habr.com/ru/articles/347348/
+- https://voltiq.ru/littlefs-esp32-tutorial/
+
+![Image!](https://www3.nd.edu/~pbui/teaching/cse.30341.fa17/static/img/project06-components.png "Image")
+![Image!](https://www3.nd.edu/~pbui/teaching/cse.30341.fa17/static/img/project06-layout.png "Image")
+![Image!](https://www3.nd.edu/~pbui/teaching/cse.30341.fa17/static/img/project06-inode.png "Image")
+![Image!](https://os.mbed.com/docs/mbed-os/v6.16/apis/images/classmbed_1_1_little_file_system.png "Image")
+
+# Memory Barriers
+
+- https://www.puppetmastertrading.com/images/hwViewForSwHackers.pdf
+- https://documentation-service.arm.com/static/62a304f231ea212bb662321d
+- https://people.freebsd.org/~lstewart/articles/cpumemory.pdf
+- https://research.swtch.com/hwmm
+- https://preshing.com/20120710/memory-barriers-are-like-source-control-operations/
+- https://preshing.com/20120913/acquire-and-release-semantics/
+- https://devblogs.microsoft.com/oldnewthing/20210614-00/?p=105307
+- https://s-o-c.org/what-are-atomic-operations-in-arm/
+- https://cpufun.substack.com/p/atomics-in-aarch64
+
+- https://habr.com/ru/articles/196548/
+
+![Image!](https://research.swtch.com/mem-tso@2x.png "Image")
+
+
