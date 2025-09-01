@@ -122,3 +122,81 @@ int main(int argc, char **argv)
 	(void) (&_x == &_y);		\
 	_x < _y ? _x : _y; })
 ```
+
+# Sort a string according to the order defined by another string
+
+- https://www.geeksforgeeks.org/dsa/sort-string-according-order-defined-another-string/
+- https://leetcode.com/problems/custom-sort-string/description/
+- https://leetcode.com/problems/custom-sort-string/solutions/
+- https://www.ascii-code.com/
+
+# LaTeX
+
+- https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes
+- https://www.overleaf.com/learn/latex/Mathematical_expressions
+- https://latex-tutorial.com/tutorials/amsmath/
+- https://www.docx2latex.com/tutorials/mathematical-equations-latex/
+- https://en.wikibooks.org/wiki/LaTeX/Mathematics
+
+# Erase-Remove Idiom in C++
+
+- https://www.geeksforgeeks.org/cpp/erase-remove-idiom-in-cpp/
+- https://en.wikipedia.org/wiki/Erase%E2%80%93remove_idiom
+- https://cengizhanvarli.medium.com/erase-remove-idiom-e30f75282a83
+- https://en.wikibooks.org/wiki/More_C%2B%2B_Idioms/Erase-Remove
+- https://en.cppreference.com/w/cpp/algorithm/remove.html
+
+> Erase-Remove-Idiom is a C++ STL (Standard Template Library) technique to remove elements from a container.
+> It is used to remove all the elements satisfying certain conditions from the container.
+> The erase-remove idiom is especially useful in array-based containers like vectors,
+> where each elimination requires all the remaining elements to adjust.
+> In the worst case, this may lead to O ( n2 ) time complexity.
+> This technique avoids this by providing the elimination of the elements in a single parse.
+> That is why, the erase-remove idiom provides O( n ) time complexity.
+> In this technique, we use the combination of two member functions of the container to remove the elements efficiently
+> (std::erase , std::remove or std::remove_if).
+> It is due to the use of this function that this technique is called the erase-remove idiom.
+
+```c++
+#include <algorithm>
+#include <iostream>
+#include <vector>
+
+void printV(std::vector<int>& v)
+{
+    for (auto i : v) {
+        std::cout << i << " ";
+    }
+    std::cout << std::endl;
+}
+
+int main()
+{
+    std::vector<int> v{ 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+
+    std::cout << "Original Vector\t\t\t: ";
+    printV(v);
+
+    // using remove_if method to move all the odd elements
+    // to the end and get the new logical end
+    auto new_logical_end = std::remove_if(
+        v.begin(), v.end(), [](int a) { return a % 2; });
+
+    std::cout << "After using remove_if()\t: ";
+    printV(v);
+
+    // erasing the elements from new logical end
+    v.erase(new_logical_end, v.end());
+    std::cout << "After using erase()\t\t: ";
+    printV(v);
+}
+```
+
+# Linux Device Model
+
+- https://linux-kernel-labs.github.io/refs/heads/master/labs/device_model.html
+- https://linux-kernel-labs.github.io/refs/pull/190/merge/labs/device_model.html
+
+![Image!](https://linux-kernel-labs.github.io/refs/heads/master/_images/ditaa-a5f399cb84561893770eb45ceeb827ce6d4a2336.png "Image")
+![Image!](https://linux-kernel-labs.github.io/refs/heads/master/_images/ditaa-f7ee56960e76c3e80fcbe59fafa38c3d93eac261.png "Image")
+![Image!](https://linux-kernel-labs.github.io/refs/heads/master/_images/ditaa-4e1f9758808dba9e61bc0e48faf4365d377f9d32.png "Image")
