@@ -307,3 +307,20 @@ int main() {
 ![Image!](https://miro.medium.com/v2/resize:fit:1100/format:webp/1*RgYY52UrcONkQlYD524uTw.png "Image")
 ![Image!](https://miro.medium.com/v2/resize:fit:1100/format:webp/1*X3UM_5aqD5q6GEn0C8Rtng.png "Image")
 ![Image!](https://miro.medium.com/v2/resize:fit:1100/format:webp/0*7flHdkStmAVmxqae.jpg "Image")
+
+# Post-Quantum Key Exchange for HTTPS Communication
+
+- https://crypto.stackexchange.com/questions/111373/in-x25519kyber768-what-is-the-use-of-the-server-kyber-keys-if-only-the-client-pu
+- https://medium.com/identity-beyond-borders/x25519kyber768-post-quantum-key-exchange-for-https-communication-70eba681931d
+- https://asecuritysite.com/blog/2024-01-06_A-Signature-Fit-for-a-Post-Quantum-Era--Dilithium-Ed25519-8e3563be17d9.html
+- https://peerj.com/articles/cs-2746/
+- https://github.com/Quantum-Blockchains/dilithium
+- https://security.googleblog.com/2023/08/toward-quantum-resilient-security-keys.html
+
+> Kyber
+> Dilithium
+
+![Image!](https://miro.medium.com/v2/resize:fit:1100/format:webp/0*Z1Wezde5MNiu4fjb "Image")
+![Image!](https://miro.medium.com/v2/resize:fit:1100/format:webp/1*VSVMc_bo4Dk2T9bMTVNdJg.jpeg "Image")
+![Image!](https://cdn-images-1.medium.com/v2/resize:fit:800/0*fBQqo71tUvD8BRxV.png "Image")
+![Image!](https://lh3.googleusercontent.com/lS1UVVErSSJ4ZdsrcStziLa1Ntl7PoHTq-ZrtvXNHo5nkg4WtQhFeyvKlU_kEX7VE2pRw2ZDob8Q-f0Pda8H9-jW8_N6NF8-8Wm-BDQbrtCcm4eExDzQ4kp9VA2bKyhjvrqrkkkN-5_i_jJc_gEP8SMO8C8aLpypyUz96oFzhTzcsBhRuRZWvMXnmLk4o1BZ-Jwv2f4mxhlcVbeCxj4NGVWLG_brFH6my7HZHg "Image")
