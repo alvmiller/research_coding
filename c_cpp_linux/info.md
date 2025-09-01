@@ -324,3 +324,12 @@ int main() {
 ![Image!](https://miro.medium.com/v2/resize:fit:1100/format:webp/1*VSVMc_bo4Dk2T9bMTVNdJg.jpeg "Image")
 ![Image!](https://cdn-images-1.medium.com/v2/resize:fit:800/0*fBQqo71tUvD8BRxV.png "Image")
 ![Image!](https://lh3.googleusercontent.com/lS1UVVErSSJ4ZdsrcStziLa1Ntl7PoHTq-ZrtvXNHo5nkg4WtQhFeyvKlU_kEX7VE2pRw2ZDob8Q-f0Pda8H9-jW8_N6NF8-8Wm-BDQbrtCcm4eExDzQ4kp9VA2bKyhjvrqrkkkN-5_i_jJc_gEP8SMO8C8aLpypyUz96oFzhTzcsBhRuRZWvMXnmLk4o1BZ-Jwv2f4mxhlcVbeCxj4NGVWLG_brFH6my7HZHg "Image")
+
+# Byte-Swapping
+
+- https://gcc.gnu.org/onlinedocs/gcc/Byte-Swapping-Builtins.html
+- https://stackoverflow.com/questions/21527957/htonl-vs-builtin-bswap32
+
+```c
+uint32_t __builtin_bswap32 (uint32_t x) 
+```
