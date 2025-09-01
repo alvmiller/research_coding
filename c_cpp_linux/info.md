@@ -197,6 +197,64 @@ int main()
 - https://linux-kernel-labs.github.io/refs/heads/master/labs/device_model.html
 - https://linux-kernel-labs.github.io/refs/pull/190/merge/labs/device_model.html
 
+- https://medium.com/@emanuele.santini.88/sysfs-in-linux-kernel-a-complete-guide-part-1-c3629470fc84
+- https://docs.kernel.org/driver-api/driver-model/device.html
+- https://sysprog21.github.io/lkmpg/
+- https://www.kernel.org/doc/html/v5.7/core-api/kobject.html
+- https://medium.com/dvt-engineering/how-to-write-your-first-linux-kernel-module-cf284408beeb
+- https://thenewstack.io/demystifying-linux-kernel-initialization/
+- https://docs.kernel.org/driver-api/driver-model/driver.html
+- https://www.kernel.org/doc/html/next/PCI/pci.html
+- https://cbtw.tech/insights/from-novice-to-expert-building-robust-linux-character-device-drivers
+- https://www.xml.com/ldd/chapter/book/ch02.html
+
 ![Image!](https://linux-kernel-labs.github.io/refs/heads/master/_images/ditaa-a5f399cb84561893770eb45ceeb827ce6d4a2336.png "Image")
 ![Image!](https://linux-kernel-labs.github.io/refs/heads/master/_images/ditaa-f7ee56960e76c3e80fcbe59fafa38c3d93eac261.png "Image")
 ![Image!](https://linux-kernel-labs.github.io/refs/heads/master/_images/ditaa-4e1f9758808dba9e61bc0e48faf4365d377f9d32.png "Image")
+
+# std::sort() vs std::stable_sort()
+
+- https://www.studyplan.dev/pro-cpp/range-based-algorithms/q/std-sort-vs-stable-sort
+- https://en.wikipedia.org/wiki/Sorting_algorithm#:~:text=Stable%20sort%20algorithms%20sort%20equal,versions%20of%20the%20original%20list
+
+> Key Differences
+- Stability: std::sort() is not stable, meaning the relative order of equivalent elements is not guaranteed to be preserved. std::stable_sort(), on the other hand, guarantees that equivalent elements retain their relative order.
+- Performance: std::sort() is generally faster than std::stable_sort() due to fewer constraints. It uses an introspective sort algorithm, combining quicksort, heapsort, and insertion sort. std::stable_sort() typically uses a combination of merge sort, which ensures stability but with a slightly higher time complexity and potentially higher memory usage.
+>
+> When to Use Which
+- Use std::sort() when performance is critical and the order of equivalent elements does not matter.
+- Use std::stable_sort() when you need to maintain the relative order of equivalent elements.
+
+```c++
+#include <algorithm>
+#include <iostream>
+#include <vector>
+
+struct Employee {
+  std::string name;
+  int department;
+
+  bool operator<(const Employee& other) const {
+    return department < other.department;
+  }
+};
+
+int main() {
+  std::vector<Employee> employees{
+    {"Alice", 2},
+    {"Bob", 1},
+    {"Charlie", 2},
+    {"David", 1}
+  };
+
+  // Stable sorting by department
+  std::stable_sort(employees.begin(),
+    employees.end());
+
+  // Printing the sorted employees
+  for (const Employee& emp : employees) {
+    std::cout << emp.name << " (Dept "
+      << emp.department << ")\n";
+  }
+}
+```
