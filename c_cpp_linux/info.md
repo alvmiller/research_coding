@@ -266,8 +266,14 @@ int main() {
 - https://en.wikipedia.org/wiki/C_dynamic_memory_allocation
 - https://stackoverflow.com/questions/64029219/why-does-malloc-call-mmap-and-brk-interchangeably
 - https://www.linkedin.com/pulse/understanding-memory-allocation-linux-relation-brk-pratap-singh-y3icc
+- https://notes.shichao.io/tlpi/ch7/
+- 
 
 > - malloc calloc free realloc
 > - brk
 > - sbrk
 > - mmap
+
+![Image!](https://media.geeksforgeeks.org/wp-content/uploads/20250305233229499334/Malloc-function-in-c.webp "Image")
+![Image!](https://notes.shichao.io/tlpi/figure_6-1.png "Image")
+![Image!](https://media.licdn.com/dms/image/v2/D5612AQE4ObNxiJM2Gg/article-cover_image-shrink_600_2000/B56ZbYWmyTGsAQ-/0/1747386528017?e=2147483647&v=beta&t=qveaeZ0Mx52wVLLfSfmJYOJss12-Df1Fxtsb0iMTixc "Image")
