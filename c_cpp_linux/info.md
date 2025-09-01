@@ -529,10 +529,10 @@ public:
 > - Move Constructor
 
 > When a class object is created using constructors, the execution order of constructors is:
-> 1 Constructors of Virtual base classes are executed, in the order that they appear in the base list.
-> 2 Constructors of nonvirtual base classes are executed, in the declaration order.
-> 3 Constructors of class members are executed in the declaration order (regardless of their order in the initialization list).
-> 4 The body of the constructor is executed.
+> 1. Constructors of Virtual base classes are executed, in the order that they appear in the base list.
+> 2. Constructors of nonvirtual base classes are executed, in the declaration order.
+> 3. Constructors of class members are executed in the declaration order (regardless of their order in the initialization list).
+> 4. The body of the constructor is executed.
 
 ```c++
 // Syntax of Default Constructor
