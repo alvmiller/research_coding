@@ -438,4 +438,141 @@ uint32_t __builtin_bswap32 (uint32_t x)
 ![Image!](https://d8it4huxumps7.cloudfront.net/uploads/images/655df16819a37_compilation_in_c_01.jpg?d=2000x2000 "Image")
 ![Image!](https://www.tutorialspoint.com/cprogramming/images/compilation-process.jpg "Image")
 
+# C++ : The rule of five
+
+- https://en.cppreference.com/w/cpp/language/rule_of_three.html
+- https://www.geeksforgeeks.org/cpp/rule-of-five-in-cpp/
+- https://medium.com/@nerudaj/understanding-the-rule-of-five-in-c-5944ca4b7bd3
+
+> If any of the below functions is defined for a class, then it is better to define all of them.
+> - Destructor
+> - Copy Constructor
+> - Copy Assignment Operator
+> - Move Constructor
+> - Move Assignment Operator
+
+```c++
+class rule_of_five
+{
+    char* cstring; // raw pointer used as a handle to a
+                   // dynamically-allocated memory block
+public:
+    explicit rule_of_five(const char* s = "") : cstring(nullptr)
+    { 
+        if (s)
+        {
+            cstring = new char[std::strlen(s) + 1]; // allocate
+            std::strcpy(cstring, s); // populate 
+        } 
+    }
+ 
+    ~rule_of_five()
+    {
+        delete[] cstring; // deallocate
+    }
+ 
+    rule_of_five(const rule_of_five& other) // copy constructor
+        : rule_of_five(other.cstring) {}
+ 
+    rule_of_five(rule_of_five&& other) noexcept // move constructor
+        : cstring(std::exchange(other.cstring, nullptr)) {}
+ 
+    rule_of_five& operator=(const rule_of_five& other) // copy assignment
+    {
+        // implemented as move-assignment from a temporary copy for brevity
+        // note that this prevents potential storage reuse
+        return *this = rule_of_five(other);
+    }
+ 
+    rule_of_five& operator=(rule_of_five&& other) noexcept // move assignment
+    {
+        std::swap(cstring, other.cstring);
+        return *this;
+    }
+ 
+// alternatively, replace both assignment operators with copy-and-swap
+// implementation, which also fails to reuse storage in copy-assignment.
+//  rule_of_five& operator=(rule_of_five other) noexcept
+//  {
+//      std::swap(cstring, other.cstring);
+//      return *this;
+//  }
+};
+```
+
+# C pointer arithmetic
+
+- https://www.geeksforgeeks.org/c/pointer-arithmetics-in-c-with-examples/
+- https://www.tutorialspoint.com/cprogramming/c_pointer_arithmetic.htm
+- https://www.gnu.org/software/c-intro-and-ref/manual/html_node/Pointer-Arithmetic.html
+- https://medium.com/@codewithcoders96/pointer-arithmetic-in-c-c-ca328e76943e
+- https://www.wscubetech.com/resources/c-programming/pointer-arithmetic
+- https://www.geeksforgeeks.org/c/pointer-arithmetic-with-strings/
+
+![Image!](https://media.geeksforgeeks.org/wp-content/uploads/20230424100935/Pointer-Addition.webp "Image")
+
+# C++ Constructors
+
+- https://www.w3schools.com/cpp/cpp_constructors.asp
+- https://www.geeksforgeeks.org/cpp/constructors-c/
+- https://en.cppreference.com/w/cpp/language/initializer_list.html
+- https://isocpp.org/wiki/faq/ctors
+- https://www.programiz.com/cpp-programming/constructors
+- https://www.mygreatlearning.com/blog/constructor-in-cpp/
+- https://en.cppreference.com/w/cpp/language/list_initialization.html
+
+- https://www.ibm.com/docs/en/xcfbg/121.141?topic=constructors-execution-order-class-objects
+
+> - Default Constructor
+> - Parameterized Constructor
+> - Copy Constructor
+> - Move Constructor
+
+> When a class object is created using constructors, the execution order of constructors is:
+> 1 Constructors of Virtual base classes are executed, in the order that they appear in the base list.
+> 2 Constructors of nonvirtual base classes are executed, in the declaration order.
+> 3 Constructors of class members are executed in the declaration order (regardless of their order in the initialization list).
+> 4 The body of the constructor is executed.
+
+```c++
+// Syntax of Default Constructor
+class ClassName {
+public:
+    ClassName(); // Default constructor declaration
+};
+
+// Syntax of Parameterized Constructor
+class ClassName {
+public:
+    ClassName(Type1 parameter1, Type2 parameter2, ...); // Parameterized constructor declaration
+};
+
+// Syntax of Copy Constructor
+class ClassName {
+public:
+    ClassName(const ClassName& obj); // Copy constructor declaration
+};
+
+// Syntax of Move Constructor in C++
+class ClassName {
+public:
+    ClassName(ClassName&& obj); // Move constructor declaration
+};
+
+// Syntax of Destructors in C++
+class ClassName {
+public:
+    ~ClassName(); // Destructor declaration
+};
+```
+
+
+
+
+
+
+
+
+
+
 
