@@ -566,6 +566,28 @@ public:
 };
 ```
 
+# TCP/IP, OSI
+
+- https://en.wikipedia.org/wiki/OSI_model
+
+- https://www.geeksforgeeks.org/computer-networks/differences-between-tcp-and-udp/
+- https://www.spiceworks.com/tech/networking/articles/tcp-vs-udp/
+- https://www.avast.com/c-tcp-vs-udp-difference
+- https://networklessons.com/network-fundamentals/introduction-to-tcp-and-udp
+
+- https://www.geeksforgeeks.org/computer-networks/tcp-3-way-handshake-process/
+- https://developer.mozilla.org/en-US/docs/Glossary/TCP_handshake
+- https://www.coursera.org/articles/three-way-handshake
+- https://www.sciencedirect.com/topics/computer-science/three-way-handshake
+
+![Image!](https://s7280.pcdn.co/wp-content/uploads/2018/06/osi-model-7-layers-1.png "Image")
+![Image!](https://datageneral.co/wp-content/uploads/2023/12/Capas-modelo-OSI.png "Image")
+![Image!](https://www.colocationamerica.com/wp-content/uploads/2018/12/udp-tcp.jpg "Image")
+![Image!](https://www.netburner.com/wp-content/uploads/2020/06/TCP-vs-UDP-1024x687.png "Image")
+![Image!](https://ipcisco.com/wp-content/uploads/2018/10/tcp-vs-udp-comparison-ipcisco.com_.png "Image")
+![Image!](https://media.geeksforgeeks.org/wp-content/uploads/handshake-1.png "Image")
+![Image!](https://ars.els-cdn.com/content/image/3-s2.0-B9780128182000000160-f05-09-9780128182000.jpg "Image")
+![Image!](https://ars.els-cdn.com/content/image/3-s2.0-B0122272404001878-gr10.gif "Image")
 
 
 
