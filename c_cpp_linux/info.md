@@ -613,11 +613,92 @@ public:
 ![Image!](https://www.labs.cs.uregina.ca/301/ARM/ARM_Cortex-M3_CoreRegisters.jpg "Image")
 ![Image!](https://microcontrollerslab.com/wp-content/uploads/2020/07/Memory-Map-region-TM4C123GH6PM-arm-cortex-M4.jpg "Image")
 
+# C++ : Static Methods and Fields
 
+- https://www.luisllamas.es/en/cpp-static-methods/#:~:text=In%20C%2B%2B%20static%20methods,an%20object%20of%20the%20class.
+- https://www.geeksforgeeks.org/cpp/static-keyword-cpp/
+- https://en.cppreference.com/w/cpp/language/static.html
+- https://www.embeddedrelated.com/showarticle/1598.php
 
+> In C++ static methods and fields are elements that do not belong to a particular instance
+> but belong directly to the class itself.
+> This means you can access them without the need to create an object of the class.
+>
+> Static methods in C++ are defined using the static keyword.
+> These methods do not have access to the non-static members of the class
+> and can only access other static methods and fields.
+> 
+> A static field (or static member variable) is a variable that is shared by all instances of a class.
+> Unlike non-static fields, which have a distinct value for each instance, static fields have a single shared value.
 
+```c++
+#include <iostream>
 
+class Util
+{
+public:
+    static int Add(int a, int b)
+    {
+        return a + b;
+    }
+};
 
+int main()
+{
+    int result = Util::Add(5, 3);
+    std::cout << "Result: " << result << std::endl; // Output: Result: 8
 
+    return 0;
+}
+```
+
+```c++
+#include <iostream>
+
+class Counter
+{
+public:
+    static int Count;
+
+    Counter()
+    {
+        Count++;
+    }
+};
+
+// Definition of the static field
+int Counter::Count = 0;
+
+int main()
+{
+    Counter c1;
+    Counter c2;
+    Counter c3;
+
+    std::cout << "Total instances created: " << Counter::Count << std::endl; // Output: Total instances created: 3
+
+    return 0;
+}
+```
+
+# C++ : Override and overload
+
+- https://www.geeksforgeeks.org/cpp/function-overloading-vs-function-overriding-in-cpp/
+- https://www.scaler.com/topics/difference-between-function-overloading-and-overriding-in-cpp/
+- https://www.tutorialspoint.com/difference-between-function-overloading-and-overriding-in-cplusplus
+- https://www.naukri.com/code360/library/function-overloading-and-overriding-in-cpp
+- https://testbook.com/key-differences/difference-between-function-overloading-and-function-overriding-in-c-plus-plus
+
+![Image!](https://media.licdn.com/dms/image/v2/D4D22AQGAo4grlCw8ZA/feedshare-shrink_800/feedshare-shrink_800/0/1693232702209?e=2147483647&v=beta&t=xI_0ZlJSBuYsFgZ62MWvULNHFR3NMKnsY2T6JEB9hUc "Image")
+
+# C++ : Overloading operators
+
+- https://www.ibm.com/docs/en/zos/2.4.0?topic=only-overloading-operators-c
+- https://en.cppreference.com/w/cpp/language/operators.html
+- https://www.geeksforgeeks.org/cpp/operator-overloading-cpp/
+- https://www.geeksforgeeks.org/cpp/what-are-the-operators-that-can-be-and-cannot-be-overloaded-in-cpp/
+
+![Image!](https://cdn-images-1.medium.com/v2/resize:fit:720/1*xuGMTu1tCAU3xl0EbQTtVg.png "Image")
+![Image!](https://d14qv6cm1t62pm.cloudfront.net/ccbp-website/Blogs/home/binary-operator-overloading-in-cpp-image-1.png "Image")
 
 
