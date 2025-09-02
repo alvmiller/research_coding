@@ -589,6 +589,29 @@ public:
 ![Image!](https://ars.els-cdn.com/content/image/3-s2.0-B9780128182000000160-f05-09-9780128182000.jpg "Image")
 ![Image!](https://ars.els-cdn.com/content/image/3-s2.0-B0122272404001878-gr10.gif "Image")
 
+# ARM Cortex-M
+
+- https://en.wikipedia.org/wiki/ARM_Cortex-M
+- https://developer.arm.com/Architectures/M-Profile%20Architecture
+- https://community.arm.com/cfs-file/__key/telligent-evolution-components-attachments/01-2142-00-00-00-00-52-96/White-Paper-_2D00_-Cortex_2D00_M-for-Beginners-_2D00_-2016-_2800_final-v3_2900_.pdf
+- https://kolegite.com/EE_library/books_and_lectures/%D0%9C%D0%B8%D0%BA%D1%80%D0%BE%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D0%BE%D1%80%D0%BD%D0%B0%20%D1%81%D1%85%D0%B5%D0%BC%D0%BE%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B0/%D0%9C%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%B5%D1%80%D0%B8/Cortex%20M%20Architecture.pdf
+- https://mu.microchip.com/arm-cortex-m-architecture-overview
+- https://www.ti.com/lit/ml/swrp141/swrp141.pdf?ts=1756821919118
+- https://embeddedsecurity.io/sec-arm-arch-core
+- https://docs.zephyrproject.org/latest/hardware/arch/arm_cortex_m.html
+
+- https://svenssonjoel.github.io/pages-2021/cortex-m-assembler-0/index.html
+- https://developer.arm.com/documentation/102438/0100/Learning-about-assembly-language
+- https://nicerland.com/arm-asm-for-embedded/
+- https://www.mikrocontroller.net/articles/ARM-ASM-Tutorial
+
+![Image!](https://microcontrollerslab.com/wp-content/uploads/2020/09/ARM-Cortex-M4-Architecture-block-diagram.jpg "Image")
+![Image!](https://www.watelectronics.com/wp-content/uploads/ARM-Architecture.jpg "Image")
+![Image!](https://media.geeksforgeeks.org/wp-content/uploads/20230426173520/ARM-Processor-and-its-Features.webp "Image")
+![Image!](https://i.sstatic.net/MGQMH.jpg "Image")
+![Image!](https://i.sstatic.net/1SPVA.png "Image")
+![Image!](https://www.labs.cs.uregina.ca/301/ARM/ARM_Cortex-M3_CoreRegisters.jpg "Image")
+![Image!](https://microcontrollerslab.com/wp-content/uploads/2020/07/Memory-Map-region-TM4C123GH6PM-arm-cortex-M4.jpg "Image")
 
 
 
