@@ -866,7 +866,15 @@ int main() {
 ![Image!](https://media.geeksforgeeks.org/wp-content/uploads/20250402152148448561/shared-pointer-in-cpp.webp "Image")
 ![Image!](https://media.geeksforgeeks.org/wp-content/uploads/20250402152221597690/weak-pointer-in-cpp.webp "Image")
 
+# C++ : Const vs Constexpr
 
+- https://medium.com/@sofiasondh/c-const-vs-constexpr-the-comparison-183f9dd92deb
+- https://madhawapolkotuwa.medium.com/constant-types-in-c-const-constexpr-constinit-and-more-e713c3f31bbe
+- https://www.cppstories.com/2022/const-options-cpp20/
+- https://vishalchovatiya.com/posts/when-to-use-const-vs-constexpr-in-cpp/
+- https://aticleworld.com/cpp-const-vs-constexpr-explained/
+
+![Image!](https://miro.medium.com/v2/resize:fit:1100/format:webp/1*hAyoDQ271QHcqVTus0TKRw.jpeg "Image")
 
 
 
