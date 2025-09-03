@@ -723,4 +723,168 @@ int main()
 
 ![Image!](https://lh6.googleusercontent.com/XRmabv2XySfvG-CG3n7yjBBFBfWkmoVKYfdbnKGLDX46A8xdxVWWEIlO8ZMRVcQzR2pTvZZLQETPUToOozR0Q7O8-4yfK8UMoc4zP82HyDAKqKagHIW8dkQX5SCfntAFCdp6QzN6WF0JHh7ZuS-imnZllY4wSvSqy40yabhid5hylS_Ps4RNvj-JEvYwHQ "Image")
 
+# C++ : Copy and Move
+
+- https://www.modernescpp.com/index.php/copy-versus-move-semantic-a-few-numbers/
+- https://www.geeksforgeeks.org/cpp/move-constructors-in-c-with-examples/
+- https://how.dev/answers/what-are-move-semantics-and-copy-semantics-in-cpp11
+- https://www.thecodedmessage.com/posts/cpp-move/
+- https://en.cppreference.com/w/cpp/language/move_constructor.html
+
+# C++ : Smart Pointer
+
+- https://www.geeksforgeeks.org/cpp/smart-pointers-cpp/
+- https://en.cppreference.com/book/intro/smart_pointers
+- https://learn.microsoft.com/en-us/cpp/cpp/smart-pointers-modern-cpp?view=msvc-170
+- https://medium.com/@lucky_rydar/guide-over-smart-pointers-in-c-46ed8b04448c
+- https://medium.com/@AlexanderObregon/how-c-smart-pointers-manage-resource-ownership-52d0065c80a9
+- https://www.modernescpp.com/index.php/c-core-guidelines-rules-to-smart-pointers/
+- https://acodersjourney.com/top-10-dumb-mistakes-avoid-c-11-smart-pointers/
+- https://www.codecademy.com/resources/docs/cpp/smart-pointers
+- https://ortogonal.github.io/cpp/forward-declaration-and-smart-pointers/
+- https://www.scaler.com/topics/cpp/smart-pointers-in-cpp/
+
+> - auto_ptr
+> - unique_ptr
+> - shared_ptr
+> - weak_ptr
+
+```c++
+#include <iostream>
+#include <memory>
+using namespace std;
+
+int main() {
+    
+    // Pointer declaration
+    auto_ptr<int> ptr1(new int(10));
+    cout << *ptr1 << endl;
+    
+    // Transfer ownership to
+    // pointer ptr2, 
+    auto_ptr<int> ptr2 = ptr1;
+    cout << *ptr2;
+    return 0;
+}
+
+#include <iostream>
+#include <memory>
+using namespace std;
+
+class Rectangle {
+    int length;
+    int breadth;
+
+public:
+    Rectangle(int l, int b) {
+        length = l;
+        breadth = b;
+    }
+    int area() { return length * breadth; }
+};
+
+int main() {
+
+    unique_ptr<Rectangle> P1(new Rectangle(10, 5));
+    cout << P1->area() << endl;
+
+    unique_ptr<Rectangle> P2;
+
+    // Copy the addres of P1 into p2
+    P2 = move(P1);
+    cout << P2->area();
+    return 0;
+}
+
+#include <iostream>
+#include <memory>
+using namespace std;
+
+class Rectangle {
+    int length;
+    int breadth;
+
+public:
+    Rectangle(int l, int b) {
+        length = l;
+        breadth = b;
+    }
+    int area() { return length * breadth; }
+};
+
+int main() {
+    
+    shared_ptr<Rectangle> P1(new Rectangle(10, 5));
+    cout << P1->area() << endl;
+
+    shared_ptr<Rectangle> P2;
+    
+    // P1 and P2 are pointing 
+    // to same object
+    P2 = P1;
+    cout << P2->area() << endl;
+    cout << P1->area() << endl;
+    cout << P1.use_count();
+    return 0;
+}
+
+#include <iostream>
+#include <memory>
+using namespace std;
+
+class Rectangle {
+    int length;
+    int breadth;
+
+public:
+    Rectangle(int l, int b) {
+        length = l;
+        breadth = b;
+    }
+
+    int area() { return length * breadth; }
+};
+
+int main() {
+    
+    // Create shared_ptr Smart Pointer
+    shared_ptr<Rectangle> P1(new Rectangle(10, 5));
+    
+    // Created a weak_ptr smart pointer
+    weak_ptr<Rectangle> P2 (P1);
+    cout << P1->area() << endl;
+    
+    // Returns the number of shared_ptr 
+    // objects that manage the object
+    cout << P2.use_count();
+    return 0;
+}
+```
+
+![Image!](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20190917111931/Auto-Pointer-in-C1-1024x630.jpg "Image")
+![Image!](https://media.geeksforgeeks.org/wp-content/uploads/20250402152108622799/unique-pointer-in-cpp.webp "Image")
+![Image!](https://media.geeksforgeeks.org/wp-content/uploads/20250402152148448561/shared-pointer-in-cpp.webp "Image")
+![Image!](https://media.geeksforgeeks.org/wp-content/uploads/20250402152221597690/weak-pointer-in-cpp.webp "Image")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
