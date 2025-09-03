@@ -876,14 +876,148 @@ int main() {
 
 ![Image!](https://miro.medium.com/v2/resize:fit:1100/format:webp/1*hAyoDQ271QHcqVTus0TKRw.jpeg "Image")
 
+# C : memcpy() naive
 
+- https://medium.com/@caruychen_48871/the-curious-case-of-memcpy-bd93936e5136
+- https://git.musl-libc.org/cgit/musl/tree/src/string/memcpy.c
+- https://codebrowser.dev/glibc/glibc/string/memcpy.c.html
+- https://www.embedded.com/optimizing-memcpy-improves-speed/
 
+- https://stackoverflow.com/questions/35843365/how-to-detect-machine-word-size-in-c-c
+- https://en.wikipedia.org/wiki/Word_(computer_architecture)
 
+```c
+#include <string.h>
+#include <stdint.h>
 
+#include <stdio.h>
 
+void *tmp_memcpy(void * const restrict dst,
+                 const void * const restrict src,
+                 const size_t n)
+{
+    size_t len = n;
+    const size_t lsize = sizeof(uintptr_t);
+    
+    if (n == 0) {
+        return (dst);
+    }
+    
+    uintptr_t *ld = (uintptr_t *)dst;
+    uintptr_t const *ls = (uintptr_t const *)src;
+    while (len >= lsize) {
+        *ld++ = *ls++;
+        len -= lsize;
+    }
 
+    char *cd = (char *)ld;
+    char const *cs = (char const *)ls;
+    while (len--) {
+        *cd++ = *cs++;
+    }
 
+    return (dst);
+}
 
+int main()
+{
+    const char *src0 = "01234567890123456789";
+    const char *src1 = "012345678";
+    const char *src2 = "01234567";
+    const char *src3 = "01237";
+    char dst[100] = {};
+    const char *src = NULL;
+    
+    printf("sizeof(uintptr_t) = %llu\n", (unsigned long long)sizeof(uintptr_t));
+    printf("sizeof(dst)/sizeof(dst[0]) = %llu\n", (unsigned long long)sizeof(dst)/sizeof(dst[0]));
+    printf("\n");
+    
+    src = src0;
+    printf("len(src) = %lu | src = %s\n", strlen(src), src);
+    (void)tmp_memcpy(dst, src, strlen(src));
+    printf("len(dst) = %lu | dst = %s\n", strlen(dst), dst);
+    memset(dst, '\0', sizeof(dst)/sizeof(dst[0]));
+    printf("\n");
+    
+    src = src1;
+    printf("len(src) = %lu | src = %s\n", strlen(src), src);
+    (void)tmp_memcpy(dst, src, strlen(src));
+    printf("len(dst) = %lu | dst = %s\n", strlen(dst), dst);
+    memset(dst, '\0', sizeof(dst)/sizeof(dst[0]));
+    printf("\n");
+    
+    src = src2;
+    printf("len(src) = %lu | src = %s\n", strlen(src), src);
+    (void)tmp_memcpy(dst, src, strlen(src));
+    printf("len(dst) = %lu | dst = %s\n", strlen(dst), dst);
+    memset(dst, '\0', sizeof(dst)/sizeof(dst[0]));
+    printf("\n");
+    
+    src = src3;
+    printf("len(src) = %lu | src = %s\n", strlen(src), src);
+    (void)tmp_memcpy(dst, src, strlen(src));
+    printf("len(dst) = %lu | dst = %s\n", strlen(dst), dst);
+    memset(dst, '\0', sizeof(dst)/sizeof(dst[0]));
+    printf("\n");
+    
+
+    return 0;
+}
+```
+
+# C \ C++ : Alignment
+
+- https://en.wikipedia.org/wiki/Data_structure_alignment
+- https://learn.microsoft.com/en-us/cpp/c-language/alignment-c?view=msvc-170
+- https://www.geeksforgeeks.org/dsa/data-structure-alignment-how-data-is-arranged-and-accessed-in-computer-memory/
+- https://stackoverflow.com/questions/41719845/memory-alignment-in-c-c
+- https://abstractexpr.com/2023/06/29/structures-in-c-from-basics-to-memory-alignment/
+- https://medium.com/@mbed101/understanding-the-alignment-problem-in-c-structs-a-comprehensive-guide-c1c0d99983be
+- https://hps.vi4io.org/_media/teaching/wintersemester_2013_2014/epc-14-haase-svenhendrik-alignmentinc-paper.pdf
+- https://learn.microsoft.com/en-us/cpp/cpp/alignment-cpp-declarations?view=msvc-170
+- https://www.gnu.org/software/c-intro-and-ref/manual/html_node/Type-Alignment.html
+- https://softwareengineering.stackexchange.com/questions/328775/how-important-is-memory-alignment-does-it-still-matter
+- https://en.cppreference.com/w/c/language/object.html
+- https://levelup.gitconnected.com/how-struct-memory-alignment-works-in-c-3ee897697236
+- https://ryonaldteofilo.medium.com/memory-and-data-alignment-in-c-b870b02c80fb
+- https://en.cppreference.com/w/cpp/memory/align.html
+- https://www.omi.me/blogs/firmware-guides/how-to-align-variables-in-memory-using-gcc-in-embedded-c?srsltid=AfmBOoo8CZJBetURWevoGT5yE2IMgzmqgCQG3AIf7PW3lB6ZRDCRaPen
+
+# Network Mask (Subnet)
+
+- https://en.wikipedia.org/wiki/Subnet
+- https://wiki.teltonika-networks.com/view/What_is_a_Netmask%3F
+- https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/tcpip-addressing-and-subnetting
+- https://dnsmadeeasy.com/resources/subnet-mask-cheat-sheet
+- https://www.dipolnet.com/what_is_the_ip_address_network_mask_gateway_bib538.htm
+- https://www.geeksforgeeks.org/computer-networks/role-of-subnet-mask/
+- https://www.aelius.com/njh/subnet_sheet.html
+- https://jumpcloud.com/it-index/what-is-a-network-mask
+- https://www.networkacademy.io/ccna/ip-subnetting/the-subnet-mask
+- https://www.freecodecamp.org/news/subnet-cheat-sheet-24-subnet-mask-30-26-27-29-and-other-ip-address-cidr-network-references/
+- https://www.auvik.com/franklyit/blog/what-is-subnet-mask/
+- https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing
+- https://www.cloudaccess.net/cloud-control-panel-ccp/157-dns-management/322-subnet-masks-reference-table.html
+
+![Image!](https://media.geeksforgeeks.org/wp-content/uploads/20241216165032658788/table.webp "Image")
+![Image!](https://media.geeksforgeeks.org/wp-content/uploads/20250108114800758375/Role-of-Subnet-Mask.webp "Image")
+
+# TLS
+
+- https://www.cloudflare.com/learning/ssl/what-happens-in-a-tls-handshake/
+- https://www.ssl.com/article/ssl-tls-handshake-ensuring-secure-online-interactions/
+- https://www.ibm.com/docs/en/ibm-mq/9.3.x?topic=tls-overview-ssltls-handshake
+- https://www.serverion.com/uncategorized/ssl-tls-handshake-process-step-by-step-guide/
+- https://en.wikipedia.org/wiki/Transport_Layer_Security
+- https://www.sectigo.com/resource-library/tls-ssl-handshake-errors-how-to-fix-them
+- https://techcommunity.microsoft.com/blog/azurepaasblog/ssltls-connection-issue-troubleshooting-test-tools/2240059
+- https://auth0.com/blog/the-tls-handshake-explained/
+- https://sematext.com/glossary/ssl-tls-handshake/
+- https://www.a10networks.com/glossary/key-differences-between-tls-1-2-and-tls-1-3/
+
+![Image!](https://www.stg.ssl.com/wp-content/uploads/2023/09/SSLTLS-Handshake-600x600.png "Image")
+![Image!](https://i.ytimg.com/vi/j9QmMEWmcfo/maxresdefault.jpg "Image")
+![Image!](https://www.a10networks.com/wp-content/uploads/differences-between-tls-1.2-and-tls-1.3-full-handshake.png "Image")
 
 
 
