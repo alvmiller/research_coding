@@ -712,6 +712,7 @@ int main()
 - https://www.geeksforgeeks.org/computer-networks/difference-between-aes-and-rsa-encryption/
 - https://dev.to/hardy_mervana/encryption-standards-aes-rsa-ecc-sha-and-other-protocols-460c
 - https://medium.com/javarevisited/appsec-a-developers-handbook-to-mastering-rsa-and-aes-encryption-9c0e6465452f
+- https://aishwaryas.hashnode.dev/hybrid-encryption
 
 > RSA and AES are combined in a "hybrid encryption" system to leverage the strengths of both:
 > RSA's secure key exchange (asymmetric encryption) and AES's high-speed bulk data encryption (symmetric encryption).
@@ -720,6 +721,6 @@ int main()
 > The encrypted key and the encrypted data are sent to the recipient,
 > who decrypts the AES key with their private RSA key, and then uses the decrypted AES key to decrypt the message.
 
-![Image!](https://www.researchgate.net/profile/Md-Ashiq-Mahmood/publication/351905746/figure/fig1/AS:1030531919642627@1622709364508/llustrative-examples-of-AES-and-RSA-Since-there-are-t-wo-kinds-of-encryption-strategy-in.ppm "Image")
+![Image!](https://lh6.googleusercontent.com/XRmabv2XySfvG-CG3n7yjBBFBfWkmoVKYfdbnKGLDX46A8xdxVWWEIlO8ZMRVcQzR2pTvZZLQETPUToOozR0Q7O8-4yfK8UMoc4zP82HyDAKqKagHIW8dkQX5SCfntAFCdp6QzN6WF0JHh7ZuS-imnZllY4wSvSqy40yabhid5hylS_Ps4RNvj-JEvYwHQ "Image")
 
 
