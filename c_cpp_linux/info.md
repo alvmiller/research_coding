@@ -701,4 +701,25 @@ int main()
 ![Image!](https://cdn-images-1.medium.com/v2/resize:fit:720/1*xuGMTu1tCAU3xl0EbQTtVg.png "Image")
 ![Image!](https://d14qv6cm1t62pm.cloudfront.net/ccbp-website/Blogs/home/binary-operator-overloading-in-cpp-image-1.png "Image")
 
+# AES , RSA , etc.
+
+- https://medium.com/@bs3440/the-aes-rsa-hybrid-encryption-a-balanced-approach-to-secure-communication-2999e5db596b
+- https://www.linkedin.com/advice/0/how-do-you-use-aes-rsa-together-hybrid-encryption-schemes
+- https://www.ijrar.org/papers/IJRAR23B1852.pdf
+- https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation
+- https://www.mdpi.com/2079-9292/9/7/1128
+- https://medium.com/batc/combining-rsa-aes-encryption-to-secure-rest-endpoint-with-sensitive-data-eb3235b0c0cc
+- https://www.geeksforgeeks.org/computer-networks/difference-between-aes-and-rsa-encryption/
+- https://dev.to/hardy_mervana/encryption-standards-aes-rsa-ecc-sha-and-other-protocols-460c
+- https://medium.com/javarevisited/appsec-a-developers-handbook-to-mastering-rsa-and-aes-encryption-9c0e6465452f
+
+> RSA and AES are combined in a "hybrid encryption" system to leverage the strengths of both:
+> RSA's secure key exchange (asymmetric encryption) and AES's high-speed bulk data encryption (symmetric encryption).
+> In this model, a temporary symmetric key (like an AES key) is generated,
+> the bulk data is encrypted with this key, and then the key itself is encrypted using the recipient's public RSA key.
+> The encrypted key and the encrypted data are sent to the recipient,
+> who decrypts the AES key with their private RSA key, and then uses the decrypted AES key to decrypt the message.
+
+![Image!](https://www.researchgate.net/profile/Md-Ashiq-Mahmood/publication/351905746/figure/fig1/AS:1030531919642627@1622709364508/llustrative-examples-of-AES-and-RSA-Since-there-are-t-wo-kinds-of-encryption-strategy-in.ppm "Image")
+
 
