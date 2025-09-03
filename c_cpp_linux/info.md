@@ -433,10 +433,12 @@ uint32_t __builtin_bswap32 (uint32_t x)
 - https://unstop.com/blog/compilation-in-c
 - https://www.tutorialspoint.com/cprogramming/c_compilation_process.htm
 - https://users.cms.caltech.edu/~mvanier/CS11_C/misc/compiling_c.html
+- https://andrew128.github.io/x86-binary/
 
 ![Image!](https://media.geeksforgeeks.org/wp-content/uploads/20230404112946/Compilation-Process-in-C.png "Image")
 ![Image!](https://d8it4huxumps7.cloudfront.net/uploads/images/655df16819a37_compilation_in_c_01.jpg?d=2000x2000 "Image")
 ![Image!](https://www.tutorialspoint.com/cprogramming/images/compilation-process.jpg "Image")
+![Image!](https://andrew128.github.io/images/x86BinaryBlog/compilationProcess.png "Image")
 
 # C++ : The rule of five
 
@@ -1019,8 +1021,75 @@ int main()
 ![Image!](https://i.ytimg.com/vi/j9QmMEWmcfo/maxresdefault.jpg "Image")
 ![Image!](https://www.a10networks.com/wp-content/uploads/differences-between-tls-1.2-and-tls-1.3-full-handshake.png "Image")
 
+# C declarations
 
+- https://www.educative.io/blog/decoding-c-declarations
+- https://www.geeksforgeeks.org/c/complicated-declarations-in-c/
+- https://faculty.cs.niu.edu/~mcmahon/CS241/Notes/reading_declarations.html
+- https://www.pearsonhighered.com/assets/samplechapter/0/1/3/1/0131774298.pdf
+- https://users.ece.utexas.edu/~ryerraballi/CPrimer/CDeclPrimer.html
+- http://unixwiz.net/techtips/reading-cdecl.html
+- https://parrt.cs.usfca.edu/doc/how-to-read-C-declarations.html
+- https://medium.com/@bartobri/untangling-complex-c-declarations-9b6a0cf88c96
+- https://www.w3schools.com/c/c_functions_decl.php
+- https://medium.com/@jalal92/c-gibberish-9d7912464242
 
+![Image!](https://miro.medium.com/v2/resize:fit:1100/format:webp/1*09XYwPFuQY79y_MuQRFHdQ.png "Image")
+
+# x86 calling conventions
+
+- https://en.wikipedia.org/wiki/X86_calling_conventions
+- https://en.wikipedia.org/wiki/Calling_convention
+- https://learn.microsoft.com/en-us/cpp/cpp/calling-conventions?view=msvc-170
+- https://wiki.osdev.org/Calling_Conventions
+- https://www.geeksforgeeks.org/cpp/calling-conventions-in-c-cpp/
+- https://learn.microsoft.com/en-us/cpp/build/x64-calling-convention?view=msvc-170
+- https://www.agner.org/optimize/calling_conventions.pdf
+- https://riscv.org/wp-content/uploads/2024/12/riscv-calling.pdf
+- https://andrew128.github.io/x86-binary/
+
+![Image!](https://andrew128.github.io/images/x86BinaryBlog/callingConventions.png "Image")
+
+# C++ Name Mangling
+
+- https://en.wikipedia.org/wiki/Name_mangling
+- https://www.ibm.com/docs/en/i/7.4.0?topic=linkage-name-mangling-c-only
+- https://www.emmtrix.com/wiki/Demystifying_C%2B%2B_-_Name_Mangling
+- https://www.geeksforgeeks.org/cpp/extern-c-in-c/
+- https://web.mit.edu/tibbetts/Public/inside-c/www/mangling.html
+- https://en.wikiversity.org/wiki/Visual_C%2B%2B_name_mangling
+- https://medium.com/@abhishek.ec/c-name-mangling-ce3d0fedf88d
+
+![Image!](https://media.licdn.com/dms/image/v2/D5622AQFjQFQTjCG6RA/feedshare-shrink_800/B56Zi46vZ0HMAg-/0/1755449066203?e=2147483647&v=beta&t=m7SZ_GNsFSMbnHmqJiRYKwyY4ZQxUb-plWNtgBi7uzM "Image")
+
+# ELF
+
+- https://andrew128.github.io/x86-binary/
+- https://en.wikipedia.org/wiki/Executable_and_Linkable_Format
+- https://refspecs.linuxfoundation.org/elf/gabi4+/ch4.eheader.html
+- https://wiki.osdev.org/ELF
+- https://man7.org/linux/man-pages/man5/elf.5.html
+- https://gist.github.com/x0nu11byt3/bcb35c3de461e5fb66173071a2379779
+- https://docs.oracle.com/cd/E19620-01/805-4694/6j4enatct/index.html
+- https://www.baeldung.com/linux/executable-and-linkable-format-file
+- https://dev.to/bytehackr/understanding-the-basics-of-elf-files-on-linux-61c
+- https://medium.com/@ajmewal/basics-of-elf-executable-and-linkable-format-file-88a516877356
+- https://blog.k3170makan.com/2018/09/introduction-to-elf-format-elf-header.html
+- https://blog.k3170makan.com/2018/09/introduction-to-elf-format-part-ii.html
+- https://ics.uci.edu/~aburtsev/238P/hw/hw3-elf/hw3-elf.html
+- https://cs4157.github.io/www/2024-1/lect/15-elf-intro.html
+- https://linux-audit.com/elf-binaries-on-linux-understanding-and-analysis/
+- https://medium.com/@4984_30211/elf-format-toolbox-ee110fe987ba
+
+![Image!](https://andrew128.github.io/images/x86BinaryBlog/elfFile.png "Image")
+![Image!](https://camo.githubusercontent.com/00cd4e64df02caf11e9c7c8f67a4d7e9470ea03c244e6d5bce8444a674b9143c/68747470733a2f2f692e696d6775722e636f6d2f4169394f714f422e706e67 "Image")
+![Image!](https://camo.githubusercontent.com/94b1128b885c29e21c64fb3b247d0184c54f4248e4195462bd15671003afc319/68747470733a2f2f692e696d6775722e636f6d2f4c4e6464546d6b2e706e67 "Image")
+![Image!](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiWiCzMg6xX9YzTX4JlU2EmSjt807TV3dFiwkfRrPB7a0cKnCnA9VAdFNm2fGuXvE5oMVG34zob4eDlFCweI_h-VB02ss-6RFal9IIAaT2W83EjMhavWdB_0ZZkiPrUPr0AcJmoVq44aII/s1600/ELF+Program+Headers+%25282%2529.png "Image")
+![Image!](https://ics.uci.edu/~aburtsev/238P/hw/hw3-elf/img/typical_elf.jpg "Image")
+![Image!](https://camo.githubusercontent.com/146b420583a08db00a96abca570e116388b080ee2de307c0d24614b714fe3d43/68747470733a2f2f692e696d6775722e636f6d2f6a364b397963482e706e67 "Image")
+![Image!](https://cs4157.github.io/www/2024-1/lect/pix/15-csapp-fig7.13.png "Image")
+![Image!](https://linux-audit.com/elf-binaries-on-linux-understanding-and-analysis/images/elf-program-headers-segments.png "Image")
+![Image!](https://miro.medium.com/v2/resize:fit:1000/1*4O3mgiWbsWv4wHL9kJwlxA.jpeg "Image")
 
 
 
