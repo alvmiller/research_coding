@@ -1161,10 +1161,203 @@ int main()
 
 ![Image!](https://www.cppstories.com/2022/images/sso_checks.png "Image")
 
+# C : angle between vectors
 
+- vector00s_angle.h
+```c
+#pragma once
 
+#ifndef VECTORS_ANGLE_H
+#define VECTORS_ANGLE_H
 
+/*
+   Used only 2D integer coordinates (not floating point)
+   
+   We always can move vector's start dot to (0,0)
+   and recalculate vector's coordinates
+   
+   A(Ax,Ay) B(Bx,By) -> V(Vx,Vy) : Vx=Bx-Ax Vy=By-Ay
+   
+   (v1,v2)=|v1||v2|cosL=v1x*v2x+v1y*v2y
+   [v1,v2]=|v1||v2|sinL=v1x*v2y-v1y*v2x
+   tgL=sinL/cosL=(v1x*v2y-v1y*v2x)/(v1x*v2x+v1y*v2y)=RES1/RES2
+   L=atan2(RES1,RES2)
+   
+   Currently, each vector should be started from (0,0)
+   
+   reset; gcc -Werror vector00s_angle.c main.c -lm -o main; ./main
+ */
 
+typedef enum angle_type_t {
+  ANGLE_RADIANS_TYPE,
+  ANGLE_DEGREES_TYPE
+} angle_type;
+
+/* Currently, each vector should be started from (0,0) */
+typedef struct vector00_t {
+    int x;
+    int y;
+} vector00;
+
+/* Currently, each vector should be started from (0,0) */
+int get_angle_between_vector00s(
+    const vector00* restrict v1,
+    const vector00* restrict v2,
+    angle_type type,
+    double *res);
+
+#endif /* !VECTORS_ANGLE_H */
+```
+
+- vector00s_angle.c
+```c
+#include <assert.h>
+#include <math.h>
+#include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "vector00s_angle.h"
+
+#define OVERFLOW_ERROR_CODE (-2)
+
+#define IS_INT_TYPE(x) _Generic((x), int: true, default: false)
+#define CHECK_VECTOR00_COORDINATES_TYPE() \
+    ({ \
+        typeof(((vector00 *)NULL)->x) _x; \
+        typeof(((vector00 *)NULL)->y) _y; \
+        _Static_assert(IS_INT_TYPE(_x), "Bad type of object (field x)"); \
+        _Static_assert(IS_INT_TYPE(_y), "Bad type of object (field y)"); \
+    })
+
+static inline double convert_angle_radians_to_degrees(double radians)
+{
+    return radians * 180.0 / M_PI;
+}
+
+static inline double calculate_angle_in_radians(int cross_product, int dot_product)
+{
+    return atan2(cross_product, dot_product);
+}
+
+static inline int calculate_cross_product(const vector00* restrict v1, const vector00* restrict v2)
+{
+    int cross_product = 0;
+    int tmp1 = 0;
+    int tmp2 = 0;
+
+    // (v1->x * v2->y - v1->y * v2->x) ~ sinA
+    if (__builtin_mul_overflow(v1->x, v2->y, &tmp1)
+     || __builtin_mul_overflow(v1->y, v2->x, &tmp2)
+     || __builtin_sub_overflow(tmp1, tmp2, &cross_product)) {
+        exit(OVERFLOW_ERROR_CODE);
+    }
+
+    return cross_product;
+}
+
+static inline int calculate_dot_product(const vector00* restrict v1, const vector00* restrict v2)
+{
+    int dot_product = 0;
+    int tmp1 = 0;
+    int tmp2 = 0;
+
+    // (v1->x * v2->x + v1->y * v2->y) ~ cosA
+    if (__builtin_mul_overflow(v1->x, v2->x, &tmp1)
+     || __builtin_mul_overflow(v1->y, v2->y, &tmp2)
+     || __builtin_add_overflow(tmp1, tmp2, &dot_product)) {
+        exit(OVERFLOW_ERROR_CODE);
+    }
+
+    return dot_product;
+}
+
+static inline bool is_equal(const vector00* restrict v1, const vector00* restrict v2)
+{
+    if (v1 == v2) {
+        return true;
+    }
+    if (v1->x == v2->x && v1->y == v2->y) {
+        return true;
+    }
+    return false;
+}
+
+int get_angle_between_vector00s(
+    const vector00* restrict v1,
+    const vector00* restrict v2,
+    angle_type type,
+    double *res)
+{
+    double angle = 0.0;
+    int cross_product = 0;
+    int dot_product = 0;
+
+    CHECK_VECTOR00_COORDINATES_TYPE();
+
+    if (v1 == NULL
+     || v2 == NULL
+     || res == NULL
+     || (type != ANGLE_RADIANS_TYPE && type != ANGLE_DEGREES_TYPE)) {
+        return -1;
+    }
+    
+    if (is_equal(v1, v2)) {
+        *res = 0.0;
+        return 0;
+    }
+    /** @TODO: Check that both vectors are in the same line */
+
+    cross_product = calculate_cross_product(v1, v2);
+    dot_product = calculate_dot_product(v1, v2);
+    angle = calculate_angle_in_radians(cross_product, dot_product);
+
+    if (type == ANGLE_DEGREES_TYPE) {
+        angle = convert_angle_radians_to_degrees(angle);
+    }
+
+    *res = angle;
+    return 0;
+}
+```
+
+- main.c
+```c
+#include <assert.h>
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "vector00s_angle.h"
+
+int main()
+{
+    int res = -1;
+    const double epsilon = 0.0001;
+    double angle = 0.0;
+    const vector00 va = { .x = 0, .y = 2 };
+    const vector00 vb = { .x = 2, .y = 0 };
+    angle_type type = ANGLE_DEGREES_TYPE;
+
+    res = get_angle_between_vector00s(&va, &vb, ANGLE_DEGREES_TYPE, &angle);
+    if (res != 0) {
+        printf("Call failed (1)!\n");
+        exit(1);
+    }
+    printf("Angle (1) = %lf\n", angle);
+    assert(fabs(angle - (-90.0)) < epsilon);
+
+    res = get_angle_between_vector00s(&vb, &va, ANGLE_DEGREES_TYPE, &angle);
+    if (res != 0) {
+        printf("Call failed (2)!\n");
+        exit(2);
+    }
+    printf("Angle (2) = %lf\n", angle);
+    assert(fabs(angle - 90.0) < epsilon);
+
+    return 0;
+}
+```
 
 
 
