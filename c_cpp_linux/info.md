@@ -1091,6 +1091,88 @@ int main()
 ![Image!](https://linux-audit.com/elf-binaries-on-linux-understanding-and-analysis/images/elf-program-headers-segments.png "Image")
 ![Image!](https://miro.medium.com/v2/resize:fit:1000/1*4O3mgiWbsWv4wHL9kJwlxA.jpeg "Image")
 
+# C++ : Multiple inheritance
+
+- https://en.wikipedia.org/wiki/Multiple_inheritance
+- https://www.geeksforgeeks.org/cpp/multiple-inheritance-in-c/
+- https://www.w3schools.com/cpp/cpp_inheritance_multiple.asp
+- https://isocpp.org/wiki/faq/multiple-inheritance
+- https://www.programiz.com/cpp-programming/multilevel-multiple-inheritance
+- https://www.tutorialspoint.com/cplusplus/cpp_multiple_inheritance.htm
+
+![Image!](https://en.wikipedia.org/wiki/File:Diamond_inheritance.svg "Image")
+
+# C++ : idioms
+
+- https://en.wikibooks.org/wiki/More_C%2B%2B_Idioms
+- https://cppdepend.com/blog/top-7-most-used-c-idioms-part1/
+- https://cppdepend.com/blog/top-7-most-used-c-idioms-part2/
+- https://medium.com/@amalpp42/idioms-in-c-f6b1c19fa605
+- https://en.wikibooks.org/wiki/More_C%2B%2B_Idioms/Print_Version
+- https://learnmoderncpp.com/2021/04/23/a-handful-of-c-idioms/
+- https://github.com/utilForever/CppIdioms
+- http://seshbot.com/blog/2014/08/16/modern-c-plus-plus-idioms-i-use-every-day/
+
+# C++ : Patterns
+
+- https://refactoring.guru/design-patterns/cpp
+- https://www.geeksforgeeks.org/system-design/modern-c-design-patterns-tutorial/
+- https://github.com/Junzhuodu/design-patterns
+- https://en.wikibooks.org/wiki/C%2B%2B_Programming/Code/Design_Patterns
+- https://medium.com/@lokeshbihani99/design-patterns-in-c-5cdf245d594d
+- https://dev.to/visheshpatel/what-is-design-pattern-just-another-article-573
+- https://refactoring.guru/design-patterns/state/cpp/example
+- https://www.alibabacloud.com/blog/discussing-the-four-aspects-of-the-c%2B%2B-design-pattern_600377
+- https://medium.com/@oleksandra_shershen/solid-principles-implementation-and-examples-in-c-99f0d7e3e868
+- https://simple.wikipedia.org/wiki/SOLID_(object-oriented_design)
+- https://medium.com/@rishu__2701/mastering-object-oriented-programming-oop-in-c-a-comprehensive-guide-62b3554822eb
+- https://www.w3schools.com/cpp/cpp_oop.asp
+- https://www.programiz.com/cpp-programming/oop
+
+# C++ : vtable
+
+- https://pabloariasal.github.io/2017/06/10/understanding-virtual-tables/
+- https://www.geeksforgeeks.org/cpp/vtable-and-vptr-in-cpp/
+- https://en.wikipedia.org/wiki/Virtual_method_table
+- https://levelup.gitconnected.com/digging-into-c-vtables-572f23aa9d43
+- https://medium.com/@satyadirisala/demystifying-dynamic-dispatch-a-deep-dive-into-virtual-functions-vptr-and-vtable-9574c1ad9bed
+- https://www.learncpp.com/cpp-tutorial/the-virtual-table/#google_vignette
+- https://medium.com/@calebleak/fast-virtual-functions-hacking-the-vtable-for-fun-and-profit-25c36409c5e0
+- https://www.timdbg.com/posts/vtables/
+- https://fekir.info/post/write-custom-virtual-table-in-cpp/
+- https://leimao.github.io/blog/CPP-Virtual-Table/
+- https://shaharmike.com/cpp/vtable-part1/
+- https://shaharmike.com/cpp/vtable-part2/
+- https://shaharmike.com/cpp/vtable-part3/
+- https://shaharmike.com/cpp/vtable-part4/
+- https://people.montefiore.uliege.be/declercq/INFO0004/documents/vtable.html
+- https://johnnysswlab.com/the-true-price-of-virtual-functions-in-c/
+- https://www.cooldoger.com/2020/06/c-virtual-function.html
+- https://alschwalm.com/blog/static/2016/12/17/reversing-c-virtual-functions/
+- https://alschwalm.com/blog/static/2017/01/24/reversing-c-virtual-functions-part-2-2/
+
+![Image!](https://i.sstatic.net/7VC6T.png "Image")
+![Image!](https://alschwalm.com/blog/static/images/2016/12/2016-12-14-194724_796x759_scrot.png "Image")
+![Image!](https://johnnysswlab.com/wp-content/uploads/vtable.gif "Image")
+![Image!](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSfJN7ifKdj8l3wySkjk37tdLZek7ahOJ61r_Dt7yVx3smPxpNvf88-5KVvVSOoY7KL2U&usqp=CAU "Image")
+![Image!](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSfJN7ifKdj8l3wySkjk37tdLZek7ahOJ61r_Dt7yVx3smPxpNvf88-5KVvVSOoY7KL2U&usqp=CAU "Image")
+![Image!](https://media.geeksforgeeks.org/wp-content/uploads/20231122182639/vtable-for-derived2-class.webp "Image")
+![Image!](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjH5JJpE7w7JBoomruPNfN2eswokLjK59K6z6K9HnSQWf-ONbBghinCRJOWGdbbp0YFBHdI9eB3boEnUTW2xxQUm9Q7e9gLepUfCTjfeyfX84V6xb23s3nhloUYVfnyCejRpjTt2w/s1600/CPP+Blog+-+SimpleInheritance_obj.png "Image")
+
+# C++ : Small string optimization
+
+- https://pvs-studio.com/en/blog/terms/6658/
+- https://cppdepend.com/blog/understanding-small-string-optimization-sso-in-stdstring/
+- https://devblogs.microsoft.com/oldnewthing/20230803-00/?p=108532
+- https://tc-imba.github.io/posts/cpp-sso/
+- https://github.com/elliotgoodrich/SSO-23
+- https://cpp-optimizations.netlify.app/small_strings/
+- https://devblogs.microsoft.com/oldnewthing/20240510-00/?p=109742
+- https://www.cppstories.com/2022/sso-cpp20-checks/
+- https://joellaity.com/2020/01/31/string.html
+- https://www.embeddedrelated.com/showarticle/1519.php
+
+![Image!](https://www.cppstories.com/2022/images/sso_checks.png "Image")
 
 
 
