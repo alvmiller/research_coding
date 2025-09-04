@@ -889,6 +889,7 @@ int main() {
 - https://en.wikipedia.org/wiki/Word_(computer_architecture)
 
 ```c
+
 #include <string.h>
 #include <stdint.h>
 
@@ -901,8 +902,8 @@ void *tmp_memcpy(void * const restrict dst,
     size_t len = n;
     const size_t lsize = sizeof(uintptr_t);
     
-    if (n == 0) {
-        return (dst);
+    if (n == 0 || dst == NULL || src == NULL) {
+        return dst;
     }
     
     uintptr_t *ld = (uintptr_t *)dst;
@@ -918,7 +919,7 @@ void *tmp_memcpy(void * const restrict dst,
         *cd++ = *cs++;
     }
 
-    return (dst);
+    return dst;
 }
 
 int main()
@@ -927,41 +928,27 @@ int main()
     const char *src1 = "012345678";
     const char *src2 = "01234567";
     const char *src3 = "01237";
+    const char *arr[] = {src0, src1, src2, src3};
     char dst[100] = {};
     const char *src = NULL;
-    
+    const size_t N = sizeof(arr)/sizeof(arr[0]);
+
     printf("sizeof(uintptr_t) = %llu\n", (unsigned long long)sizeof(uintptr_t));
     printf("sizeof(dst)/sizeof(dst[0]) = %llu\n", (unsigned long long)sizeof(dst)/sizeof(dst[0]));
+    printf("sizeof(arr)/sizeof(arr[0]) = %llu\n", (unsigned long long)sizeof(arr)/sizeof(arr[0]));
     printf("\n");
-    
-    src = src0;
-    printf("len(src) = %lu | src = %s\n", strlen(src), src);
-    (void)tmp_memcpy(dst, src, strlen(src));
-    printf("len(dst) = %lu | dst = %s\n", strlen(dst), dst);
-    memset(dst, '\0', sizeof(dst)/sizeof(dst[0]));
-    printf("\n");
-    
-    src = src1;
-    printf("len(src) = %lu | src = %s\n", strlen(src), src);
-    (void)tmp_memcpy(dst, src, strlen(src));
-    printf("len(dst) = %lu | dst = %s\n", strlen(dst), dst);
-    memset(dst, '\0', sizeof(dst)/sizeof(dst[0]));
-    printf("\n");
-    
-    src = src2;
-    printf("len(src) = %lu | src = %s\n", strlen(src), src);
-    (void)tmp_memcpy(dst, src, strlen(src));
-    printf("len(dst) = %lu | dst = %s\n", strlen(dst), dst);
-    memset(dst, '\0', sizeof(dst)/sizeof(dst[0]));
-    printf("\n");
-    
-    src = src3;
-    printf("len(src) = %lu | src = %s\n", strlen(src), src);
-    (void)tmp_memcpy(dst, src, strlen(src));
-    printf("len(dst) = %lu | dst = %s\n", strlen(dst), dst);
-    memset(dst, '\0', sizeof(dst)/sizeof(dst[0]));
-    printf("\n");
-    
+
+    for (size_t i = 0; i < N; ++i) {
+        memset(dst, '\0', sizeof(dst)/sizeof(dst[0]));
+        src = arr[i];
+        printf("len(src) = %lu | src = %s\n", strlen(src), src);
+        (void)tmp_memcpy(dst, src, strlen(src));
+        printf("len(dst) = %lu | dst = %s\n", strlen(dst), dst);
+        if (strlen(src) != strlen(dst) || memcmp(src, dst, strlen(src)) != 0) {
+            printf("\tError!\n");
+        }
+        printf("\n");
+    }
 
     return 0;
 }
