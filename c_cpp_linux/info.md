@@ -1702,3 +1702,85 @@ int main()
     return 0;
 }
 ```
+
+# C++ : Iterator Invalidation
+
+- https://www.geeksforgeeks.org/cpp/iterator-invalidation-cpp/
+- https://lightcone.medium.com/iterator-invalidation-in-modern-c-ca0f3c161c5f
+- https://learnmoderncpp.com/2024/09/04/understanding-iterator-invalidation/
+- https://www.tutorialspoint.com/iterator-invalidation-in-cplusplus
+- https://dotnettutorials.net/lesson/iterator-invalidation-in-cpp/
+- https://intellipaat.com/blog/iterator-invalidation-cpp/
+- https://labex.io/tutorials/cpp-how-to-resolve-iterator-lifetime-issues-419975
+
+> When the container to which an Iterator points changes shape internally, i.e. when elements are moved from one position to another, and the initial iterator still points to the old invalid location, then it is called Iterator invalidation.
+
+```c++
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    vector<int> v = { 1, 5, 10, 15, 20 };
+
+    // Changing vector while iterating over it
+    // (This causes iterator invalidation)
+    for (auto it = v.begin(); it != v.end(); it++)
+        if ((*it) == 5)
+            v.push_back(-1);
+
+    for (auto it = v.begin(); it != v.end(); it++)
+        cout << (*it) << " ";
+    return 0;
+}
+```
+
+# C++ : STL Algorithms
+
+- https://en.cppreference.com/w/cpp/algorithm.html
+- https://www.geeksforgeeks.org/cpp/c-magicians-stl-algorithms/
+- https://cplusplus.com/reference/algorithm/
+- https://www.w3schools.com/cpp/cpp_ref_algorithm.asp
+- https://www.quantstart.com/articles/C-Standard-Template-Library-Part-III-Algorithms/
+- https://www.sandordargo.com/blog/2019/01/30/stl-algos-intro
+- https://medium.com/@shrutipokale2016/c-stl-algorithms-one-shot-81ecede7657d
+- https://www.geeksforgeeks.org/cpp/algorithms-library-c-stl/
+
+> 1. Searching Algorithms
+> 2. Sorting and Rearranging Algorithms
+> 3. Manipulation Algorithms
+> 4. Counting and Comparing Algorithms
+
+# C++ : STL Iterators
+
+- https://www.geeksforgeeks.org/cpp/iterators-c-stl/
+- https://www.w3schools.com/cpp/cpp_iterators.asp
+- https://en.cppreference.com/w/cpp/iterator.html
+- https://www.programiz.com/cpp-programming/iterators
+- https://cplusplus.com/reference/iterator/
+
+
+> - Input
+> - Output
+> - Forward
+> - Bidirectional
+> - Random Access
+
+![Image!](https://www.programiz.com/sites/tutorial2program/files/vector-iterator.png "Image")
+
+```c++
+#include <iostream>
+#include<vector>
+using namespace std;
+
+int main() {
+    vector <string> languages = {"Python", "C++", "Java"};
+    vector<string>::iterator itr;
+
+    // iterate over all elements
+    for (itr = languages.begin(); itr != languages.end(); itr++) {
+        cout << *itr << ", ";
+    }
+    return 0;
+}
+```
