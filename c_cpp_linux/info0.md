@@ -1,7 +1,3 @@
-- https://www.markdownguide.org/basic-syntax/
-- https://markdownlivepreview.com/
-- https://www.markdownguide.org/extended-syntax/
-
 # memset_s
 
 - https://en.cppreference.com/w/c/string/byte/memset.html
