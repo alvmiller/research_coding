@@ -423,3 +423,57 @@ int main() {
     return 0;
 }
 ```
+
+# C++ : Lock Free
+
+- https://en.cppreference.com/w/cpp/atomic/atomic/is_lock_free
+- https://www.modernescpp.com/index.php/a-lock-free-stack-a-simplified-implementation/
+- https://github.com/DNedic/lockfree
+- https://radiantsoftware.hashnode.dev/c-lock-free-queue-part-i
+- https://radiantsoftware.hashnode.dev/c-lock-free-queue-part-ii
+- https://jbseg.medium.com/lock-free-queues-e48de693654b
+- https://www.codewithc.com/advanced-c-concurrency-the-art-of-lock-free-programming/?amp=1
+- https://kmdreko.github.io/posts/20191003/a-simple-lock-free-ring-buffer/
+
+```c++
+#include <atomic>
+#include <iostream>
+
+template<typename T>
+class LockFreeStackPush {
+ private:
+    struct Node {
+        T data;
+        Node* next;
+        Node(T d): data(d), next(nullptr) {}
+    };
+    std::atomic<Node*> head;
+ public:
+    LockFreeStackPush() = default;
+    LockFreeStackPush(const LockFreeStackPush&) = delete;
+    LockFreeStackPush& operator= (const LockFreeStackPush&) = delete;
+   
+    void push(T val) {
+        Node* const newNode = new Node(val);                            // 1
+        newNode->next = head.load();                                    // 2
+        while( !head.compare_exchange_strong(newNode->next, newNode) ); // 3
+    }
+};
+   
+int main(){
+    LockFreeStackPush<int> lockFreeStack;
+    lockFreeStack.push(5);
+    
+    LockFreeStackPush<double> lockFreeStack2;
+    lockFreeStack2.push(5.5);
+    
+    LockFreeStackPush<std::string> lockFreeStack3;
+    lockFreeStack3.push("hello");
+}
+```
+
+![Image!](https://kmdreko.github.io/posts/20191003/a-simple-lock-free-ring-buffer/detail1.png "Image")
+
+
+
+
