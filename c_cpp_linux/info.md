@@ -1,1 +1,3 @@
-
+- https://www.markdownguide.org/basic-syntax/
+- https://markdownlivepreview.com/
+- https://www.markdownguide.org/extended-syntax/
