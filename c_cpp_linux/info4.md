@@ -75,9 +75,16 @@ int main()
 - https://en.cppreference.com/w/cpp/algorithm/stable_sort.html
 - https://cplusplus.com/reference/algorithm/stable_sort/
 
+- https://www.geeksforgeeks.org/dsa/stable-and-unstable-sorting-algorithms/
+- https://medium.com/@rishi.barve0409/importance-of-stable-sorting-5a7a04955690
+
 > stable_sort() is used to sort the elements in the range [first, last) in ascending order.
 > It is like std::sort, but stable_sort() keeps the relative order of elements with equivalent values.
 > It comes under the <algorithm> header file.
+
+>  Stable sort doesn’t matter in case of an array of numbers. The actual use of stable sorting comes when there is some more information stored in the array along with the number in the array. Like in the figure above, you have numbers on the balls along with the colour. So if you have an array of balls and you apply a non stable sorting algorithm on that array, the result will be same in terms of numbers but the colour sequence might change.
+>
+> This concept becomes very important in case an array needs to be sorted first on some comparator then on another comparator. For example you have a class Car with parameters top_speed and price. And lets say you want to arrange the cars on the basis of price. And for all the cars having same price on the basis of top_speed. Here you can sort the cars first on top_speed and then on price. However, in second sort(on price) you will have to use stable sorting, else the output of first sort will have no effect on final answer. Similar algorithm is used when we use 2 or more columns in “order by” clause in SQL queries.
 
 ```c++
 #include <bits/stdc++.h>
