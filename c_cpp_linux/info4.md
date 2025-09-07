@@ -176,4 +176,28 @@ void good()
 
 ![Image!](https://miro.medium.com/v2/resize:fit:1400/1*sMhY9dDDYP0FRisYTkqPcw.png "Image")
 
+# C : XOR swap
+
+- https://en.wikipedia.org/wiki/XOR_swap_algorithm
+- https://medium.com/@jalal92/the-magic-of-xor-swapping-in-c-4ed944f2ff0a
+- https://www.geeksforgeeks.org/cpp/swap-two-variables-using-xor/
+- https://betterexplained.com/articles/swap-two-variables-using-xor/
+
+![Image!](https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/XOR_Swap.svg/960px-XOR_Swap.svg.png")
+
+```c
+void xor_swap(int *x, int *y) 
+{
+  if (x == y) return;
+  *x ^= *y;
+  *y ^= *x;
+  *x ^= *y;
+}
+
+#define XORSWAP(a, b)                                                         \
+  ((&(a) == &(b)) ? (a) /* Check for distinct addresses */                    \
+                  : XORSWAP_UNSAFE(a, b))
+```
+
+
 
