@@ -183,7 +183,7 @@ void good()
 - https://www.geeksforgeeks.org/cpp/swap-two-variables-using-xor/
 - https://betterexplained.com/articles/swap-two-variables-using-xor/
 
-![Image!](https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/XOR_Swap.svg/960px-XOR_Swap.svg.png")
+![Image!](https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/XOR_Swap.svg/960px-XOR_Swap.svg.png "Image")
 
 ```c
 void xor_swap(int *x, int *y) 
