@@ -105,3 +105,25 @@ int main()
     return 0;
 }
 ```
+
+# TPM , eSE, HSM
+
+- https://goteleport.com/blog/tpm-vs-hsm-difference/
+- https://www.ssl2buy.com/wiki/tpm-vs-hsm
+- https://sidechainsecurity.com/what-is-the-difference-between-tpm-and-hsm-security/
+- https://cheapsslweb.com/blog/what-is-the-difference-between-tpm-vs-hsm/
+- https://sslinsights.com/tpm-vs-hsm/
+- https://www.wolfssl.com/difference-hsm-tpm-secure-enclave-secure-element-hardware-root-trust/
+- https://www.tropicsquare.com/blogs/hardware-security-understanding-the-differences-between-a-secure-element-tpm-hsm-and-a-tee
+
+> Hardware Security Module (HSM)
+> HSM is perhaps the most overloaded term in the hardware security space. The term HSM is sometimes used to refer to any type of discrete hardware security device including a Secure Element or TPM. This is particularly true in the automotive market where Secure Elements are often referred to as a HSM.
+> In addition to being used as a generic term, an HSM also refers to large (and often expensive) hardware security appliances primarily used in data center operations. Context is therefore key to understanding how the term HSM is used.
+> 
+> Secure Element (SE)
+> The term Secure Element generally refers to discrete hardware security chips that are built into larger devices. The functionality of a Secure Element varies based on the use-case, with prices ranging from sub-one-dollar to several dollars.
+>
+> Trusted Platform Module (TPM)
+> A TPM is a specific type of secure element that is implemented in accordance with the TPM standard developed by the Trusted Computing Group (TCG). The functionality of a TPM is standardized, with prices ranging from slightly under one dollar to a few dollars, depending upon the manufacturer and volume.
+
+![Image!](https://cdn.prod.website-files.com/67a8fa554bf28c588cb0f98f/687f4a6a9070078c9f0e4636_Table.png "Image")
