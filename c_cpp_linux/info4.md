@@ -244,4 +244,54 @@ int main()
 }
 ```
 
+# C : read/write POSIX
+
+```c
+printf("Writing data to file...\n");
+    ssize_t len = DATA_SIZE;
+    ssize_t ret = 0;
+    char *buf = data;
+    while (len != 0
+        && ((ret = write(fd, buf, len)) != DATA_SIZE)) {
+        printf("\tError: Not all data had been written (ret = %zd)\n", ret);
+        if (ret == -1) {
+            perror("\tGot error");
+            if (errno == EINTR) {
+                continue;
+            }
+            if (errno == ENOSPC || errno == EDQUOT) {
+               printf("\tError: No Space\n");
+                break;
+            }
+            return;
+        }
+        len -= ret;
+        buf += ret;
+        printf("\tError: Not full len wrote\n");
+    }
+
+    printf("Seek file...\n");
+    off_t ret_lseek = lseek(fd, 0, SEEK_SET);
+    if (ret_lseek == -1) {
+        perror("\tGot error");
+        return;
+    }
+   
+    printf("Reading file...\n");
+    buf = data_read;
+    len = DATA_SIZE;
+    while (len != 0
+        && (ret = read(fd, buf, len)) != DATA_SIZE) {
+        if (ret == -1) {
+            perror("\tGot error");
+            if (errno == EINTR) {
+                continue;
+            }
+            return;
+        }
+        len -= ret;
+        buf += ret;
+        printf("\tError: Not full len read\n");
+    }
+```
 
