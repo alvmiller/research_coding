@@ -106,7 +106,7 @@ int main()
 }
 ```
 
-# TPM , eSE, HSM
+# TPM , eSE , HSM , RPMB , TEE
 
 - https://goteleport.com/blog/tpm-vs-hsm-difference/
 - https://www.ssl2buy.com/wiki/tpm-vs-hsm
@@ -115,6 +115,11 @@ int main()
 - https://sslinsights.com/tpm-vs-hsm/
 - https://www.wolfssl.com/difference-hsm-tpm-secure-enclave-secure-element-hardware-root-trust/
 - https://www.tropicsquare.com/blogs/hardware-security-understanding-the-differences-between-a-secure-element-tpm-hsm-and-a-tee
+
+- https://www.sdcard.org/developers/boot-and-new-security-features/replay-protected-memory-block/
+- https://sergioprado.blog/rpmb-a-secret-place-inside-the-emmc/
+- https://www.sciencedirect.com/science/article/pii/S2666281723002019
+- https://docs.nvidia.com/jetson/archives/r36.4.3/DeveloperGuide/SD/Security/FSKP.html
 
 > Hardware Security Module (HSM)
 > HSM is perhaps the most overloaded term in the hardware security space. The term HSM is sometimes used to refer to any type of discrete hardware security device including a Secure Element or TPM. This is particularly true in the automotive market where Secure Elements are often referred to as a HSM.
@@ -125,5 +130,12 @@ int main()
 >
 > Trusted Platform Module (TPM)
 > A TPM is a specific type of secure element that is implemented in accordance with the TPM standard developed by the Trusted Computing Group (TCG). The functionality of a TPM is standardized, with prices ranging from slightly under one dollar to a few dollars, depending upon the manufacturer and volume.
+>
+> Replay Protected Memory Block (RPMB)
+RPMB is introduced to store data in an authenticated memory area for the purpose of protecting data from a replay attack or avoiding unexpected data updates (makes it possible to store and retrieve data with integrity and authenticity support).
 
 ![Image!](https://cdn.prod.website-files.com/67a8fa554bf28c588cb0f98f/687f4a6a9070078c9f0e4636_Table.png "Image")
+![Image!](https://www.sdcard.org/cms/wp-content/uploads/2022/08/image12.png "Image")
+![Image!](https://www.sdcard.org/cms/wp-content/uploads/2022/04/image8.png "Image")
+![Image!](https://sergioprado.blog/images/202305240-rpmb-partition.png "Image")
+![Image!](https://sergioprado.blog/images/202305240-rpmb-write.png "Image")
