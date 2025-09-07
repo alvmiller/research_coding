@@ -32,7 +32,7 @@ void *tmp_memcpy(void * const restrict dst,
     size_t len = n;
     const size_t lsize = sizeof(uintptr_t);
     
-    if (n == 0 || dst == NULL || src == NULL) {
+    if (n == 0 || dst == NULL || src == NULL || src == dst) {
         return dst;
     }
     
