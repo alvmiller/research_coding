@@ -183,6 +183,13 @@ void good()
 - https://www.geeksforgeeks.org/cpp/swap-two-variables-using-xor/
 - https://betterexplained.com/articles/swap-two-variables-using-xor/
 
+- https://www.geeksforgeeks.org/cpp/difference-between-stdswap-and-stdvectorswap/
+- https://en.cppreference.com/w/cpp/utility/exchange.html
+- https://www.fluentcpp.com/2020/09/25/stdexchange-patterns-fast-safe-expressive-and-probably-underused/
+- https://en.cppreference.com/w/cpp/algorithm/swap.html
+- https://cplusplus.com/reference/algorithm/swap/
+- https://www.geeksforgeeks.org/cpp/swap-in-cpp/
+
 ![Image!](https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/XOR_Swap.svg/960px-XOR_Swap.svg.png "Image")
 
 ```c
@@ -197,6 +204,30 @@ void xor_swap(int *x, int *y)
 #define XORSWAP(a, b)                                                         \
   ((&(a) == &(b)) ? (a) /* Check for distinct addresses */                    \
                   : XORSWAP_UNSAFE(a, b))
+```
+
+```c++
+template <class T> void swap (T& a, T& b)
+{
+  T c(std::move(a)); a=std::move(b); b=std::move(c);
+}
+template <class T, size_t N> void swap (T (&a)[N], T (&b)[N])
+{
+  for (size_t i = 0; i<N; ++i) swap (a[i],b[i]);
+}
+```
+
+```c++
+#include <iostream>     // std::cout
+#include <algorithm>    // std::swap
+
+int main ()
+{
+  int x=10, y=20;                              // x:10 y:20
+  std::swap(x,y);                              // x:20 y:10
+
+  return 0;
+}
 ```
 
 # C : compare 2 float
