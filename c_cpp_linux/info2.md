@@ -217,7 +217,7 @@ int main()
 - https://www.programiz.com/cpp-programming/multilevel-multiple-inheritance
 - https://www.tutorialspoint.com/cplusplus/cpp_multiple_inheritance.htm
 
-![Image!](https://en.wikipedia.org/wiki/File:Diamond_inheritance.svg "Image")
+![Image!](https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Diamond_inheritance.svg/270px-Diamond_inheritance.svg.png "Image")
 
 # C++ : idioms
 
