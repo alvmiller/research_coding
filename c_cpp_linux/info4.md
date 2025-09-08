@@ -201,6 +201,10 @@ void xor_swap(int *x, int *y)
   *x ^= *y;
 }
 
+#define XORSWAP_UNSAFE(a, b)                                                   \
+  ((a) ^= (b), (b) ^= (a),                                                     \
+   (a) ^= (b)) /* Doesn't work when a and b are the same object - assigns zero \
+                  (0) to the object in that case */
 #define XORSWAP(a, b)                                                         \
   ((&(a) == &(b)) ? (a) /* Check for distinct addresses */                    \
                   : XORSWAP_UNSAFE(a, b))
