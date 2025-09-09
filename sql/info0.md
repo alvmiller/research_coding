@@ -183,6 +183,27 @@ LEFT JOIN B ON (A.i = B.i)
 WHERE B.i IS NULL;
 ```
 
+# SQL : COUNT
+
+- https://www.w3schools.com/sql/sql_count.asp
+- https://www.geeksforgeeks.org/sql/sql-count-function/
+- https://www.datacamp.com/tutorial/count-sql-function
+- https://www.programiz.com/sql/count
+- https://www.ionos.com/digitalguide/server/configuration/sql-count/
+
+```sql
+SELECT COUNT(*)
+FROM Products;
+
+SELECT COUNT(ProductName)
+FROM Products;
+
+SELECT COUNT(DISTINCT Price)
+FROM Products;
+```
+
+
+
 
 
 
