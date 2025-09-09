@@ -353,4 +353,101 @@ CREATE TABLE Orders (
 ![Image!](https://doimages.nyc3.cdn.digitaloceanspaces.com/Temp-Vinayak/Database%20Normalization.png "Image")
 ![Image!](https://doimages.nyc3.cdn.digitaloceanspaces.com/Temp-Vinayak/2nf%20to%203nf.png "Image")
 
+# SQL : Examples
+
+- https://www.datacamp.com/blog/top-sql-interview-questions-and-answers-for-beginners-and-intermediate-practitioners
+- https://www.geeksforgeeks.org/sql/sql-interview-questions/
+- https://www.interviewbit.com/sql-interview-questions/
+- https://leetcode.com/studyplan/top-sql-50/
+- https://datalemur.com/questions
+- https://roadmap.sh/questions/sql-queries
+- https://www.geeksforgeeks.org/sql/sql-exercises/
+
+# SQL : CTE
+
+- https://www.geeksforgeeks.org/sql/cte-in-sql/
+- https://www.datacamp.com/tutorial/cte-sql
+
+> In SQL, a Common Table Expression (CTE) is an essential tool for simplifying complex queries and making them more readable. By defining temporary result sets that can be referenced multiple times, a CTE in SQL allows developers to break down complicated logic into manageable parts.
+> Uses of CTEs
+> - Breaking down complex queries into smaller, reusable components.
+> - Improving readability and modularity by separating the logic.
+> - Enabling recursive operations for hierarchical data.
+
+```sql
+WITH cte_name AS (
+    SELECT query
+)
+SELECT *
+FROM cte_name;
+```
+
+# SQL : Indexes
+
+- https://www.geeksforgeeks.org/sql/sql-indexes/
+- https://www.atlassian.com/data/sql/how-indexing-works
+- https://medium.com/@sofiasondh/what-is-index-in-sql-142c50983328
+- https://www.datacamp.com/tutorial/sql-server-index
+- https://www.linkedin.com/pulse/mastering-sql-indexing-beginners-guide-adegboyega-aare-qimmf
+- https://www.zen8labs.com/insights/development/sql/advanced-types-of-indexing-strategies-in-sql/
+- https://reliasoftware.com/blog/types-of-indexes-in-sql
+- https://www.linkedin.com/pulse/all-types-indexes-sql-l%C3%A2m-quang-vinh-vkssc
+- https://www.sqlservertutorial.net/sql-server-indexes/sql-server-create-index/
+- https://www.edureka.co/blog/index-in-sql/
+- https://www.boardinfinity.com/blog/index-in-sql/
+- https://learn.microsoft.com/en-us/sql/relational-databases/sql-server-index-design-guide?view=sql-server-ver17
+- https://www.dbload.com/articles/indexes-in-mssql-and-mysql.htm
+
+> Indexes in SQL are special data structures that improve speed of data retrieval operations. They work like a quick lookup table for the database instead of scanning the entire table row by row, database can use the index to directly locate the required rows.
+> They play a crucial role in improving performance and efficiency in databases as it:
+> - Speed up queries (SELECT, JOIN, WHERE, ORDER BY).
+> - Reduce disk I/O and improve efficiency in large tables.
+> - Ensure data integrity with unique indexes.
+> - Must be used wisely as too many indexes can slow down INSERT, UPDATE and DELETE.
+> Note: Primary Key and Unique constraints automatically create indexes.
+
+```sql
+CREATE INDEX index ON TABLE column;
+```
+
+> There are two types of databases indexes:
+> - Clustered
+> - Non-clustered
+
+![Image!](https://miro.medium.com/v2/resize:fit:1100/format:webp/0*xNMAVekRn935Dwo_ "Image")
+![Image!](https://miro.medium.com/v2/resize:fit:1100/format:webp/1*lJDXsBsBYuvCosWwIBhYHQ.png "Image")
+![Image!](https://api.reliasoftware.com/uploads/types_of_indexes_in_sql_af5fdf6445.webp "Image")
+![Image!](https://api.reliasoftware.com/uploads/clustered_indexes_7a6199b694.webp "Image")
+![Image!](https://api.reliasoftware.com/uploads/non_clustered_indexes_f6ae5210c2.webp "Image")
+![Image!](https://api.reliasoftware.com/uploads/composite_indexes_27e20950e9.webp "Image")
+![Image!](https://www.sqlservertutorial.net/wp-content/uploads/SQL-Server-nonclustered-index.png "Image")
+
+# SQL : Duplicates
+
+- https://www.atlassian.com/data/sql/how-to-find-duplicate-values-in-a-sql-table
+- https://www.w3schools.com/sql/sql_distinct.asp
+
+```sql
+SELECT username, email, COUNT(*)
+FROM users
+GROUP BY username, email
+HAVING COUNT(*) > 1
+```
+
+```sql
+SELECT a.*
+FROM users a
+JOIN (SELECT username, email, COUNT(*)
+FROM users 
+GROUP BY username, email
+HAVING count(*) > 1 ) b
+ON a.username = b.username
+AND a.email = b.email
+ORDER BY a.email
+```
+
+
+
+
+
 
