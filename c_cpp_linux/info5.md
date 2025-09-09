@@ -125,5 +125,140 @@ public boolean checkDomain(HttpCookie httpCookie) {
 }
 ```
 
+# Linux : Process and Thread
+
+- https://www.baeldung.com/linux/process-vs-thread
+- https://www.geeksforgeeks.org/operating-systems/difference-between-process-and-thread/
+- https://www.linkedin.com/pulse/linux-tasks-processes-threads-robert-luciani
+- https://docs.redhat.com/en/documentation/red_hat_enterprise_linux_for_real_time/7/html/reference_guide/chap-threads_and_processes
+- https://medium.com/@gtamilarasan/context-switching-performance-threads-vs-processes-6a1b5d2c9954
+- https://www.scaler.com/topics/linux-thread/
+- https://www.site24x7.com/learn/threads-vs-processes-in-linux.html
+- https://linuxhint.com/process-vs-thread-linux/
+
+![Image!](https://i.ytimg.com/vi/4rLW7zg21gI/maxresdefault.jpg "Image")
+![Image!](https://linuxhint.com/wp-content/uploads/2021/10/Process-vs-Threads-in-Linux-2.png "Image")
+
+# Linux : Daemon
+
+- https://lloydrochester.com/post/c/unix-daemon-example/
+- https://github.com/pasce/daemon-skeleton-linux-c
+- https://sandervanderburg.blogspot.com/2020/01/writing-well-behaving-daemon-in-c.html
+- https://github.com/jirihnidek/daemon
+- https://psychocod3r.wordpress.com/2019/03/19/how-to-write-a-daemon-process-in-c/
+- https://pavaka.github.io/simple-linux-daemon-tutorial/
+- https://man7.org/linux/man-pages/man3/daemon.3.html
+
+> Daemons are long running processes that run in the background with no controlling terminal - tty.
+
+```c
+ 1 #include <stdio.h>
+ 2 #include <stdlib.h>
+ 3 #include <unistd.h>
+ 4 #include <fcntl.h>
+ 5 #include <errno.h>
+ 6 #include <syslog.h>
+ 7 
+ 8 void daemonize( char *cmd ){
+ 9         pid_t pid;
+10 
+11         /* Clear file creation mask */
+12         umask( 0 );
+13 
+14         /* Spawn a new process and exit */
+15         if( (pid = fork()) < 0 ){ /* Fork error */
+16                 fprintf( stderr, "%s: Fork error\n", cmd );
+17                 exit( errno );
+18         }
+19         else if( pid > 0 ){ /* Parent process */
+20                 exit( 0 );
+21         }
+22         /* Child process */
+23         setsid();
+24 
+25         /* Change working directory to root directory */
+26         if( chdir( "/" ) < 0 ){
+27                 fprintf( stderr, "%s: Error changing directory\n", cmd );
+28                 exit( errno );
+29         }
+30 
+31         /* Close all open file descriptors */
+32         for( int i = 0; i < 1024; i++ ){
+33                 close( i );
+34         }
+35 
+36         /* Reassociate file descriptors 0, 1, and 2 with /dev/null */
+37         int fd0 = open( "/dev/null", O_RDWR );
+38         int fd1 = dup( 0 );
+39         int fd2 = dup( 0 );
+40 
+41         /* Open the log file */
+42         openlog( cmd, LOG_CONS, LOG_DAEMON );
+43         if( fd0 != 0 || fd1 != 1 || fd2 != 2 ){
+44                 syslog( LOG_ERR, "Unexpected file descriptors %d, %d, %d\n",
+45                         fd0, fd1, fd2 );
+46                 exit( errno );
+47         }
+48 }
+```
+
+```c
+#include <unistd.h>
+#include <stdio.h>
+
+int
+main(int argc, char* argv[])
+{
+  // change to the "/" directory
+  int nochdir = 0;
+
+  // redirect standard input, output and error to /dev/null
+  // this is equivalent to "closing the file descriptors"
+  int noclose = 0;
+
+  // glibc call to daemonize this process without a double fork
+  if(daemon(nochdir, noclose))
+    perror("daemon");
+
+  // our process is now a daemon!
+  sleep(60);
+
+  return 0;
+}
+```
+
+# Linux : Memory
+
+- https://www.logicmonitor.com/blog/the-right-way-to-monitor-virtual-memory-on-linux
+- https://medium.com/@vdczz.dev/memory-in-linux-ee513a2cbfbe
+- https://tldp.org/LDP/tlk/mm/memory.html
+- https://unix.stackexchange.com/questions/610444/the-structure-of-the-virtual-memory-of-a-linux-process
+- https://zedas.fr/posts/linux-explained-7-memory-management/
+- https://hotsushi.github.io/linux/virtual/memory/2018/01/19/Linux-Virtual-Memory-Explained.html
+- https://docs.redhat.com/en/documentation/red_hat_enterprise_linux_for_real_time/7/html/reference_guide/chap-memory_allocation
+- https://tonylixu.medium.com/linux-memory-management-8a66932eb711
+- https://en.wikipedia.org/wiki/Virtual_memory
+- https://medium.com/@rayenhedri02/exploring-virtual-memory-mapping-kernel-handling-and-swapping-ec9130f4f2e0
+- https://stackoverflow.com/questions/2445242/what-does-the-kernel-virtual-memory-of-each-process-contain
+
+![Image!](https://i.sstatic.net/KJGw7.png "Image")
+![Image!](https://zedas.fr/images/linux/virtual-memory.png "Image")
+![Image!](https://zedas.fr/images/linux/linux-memory-distribution.png "Image")
+![Image!](https://hotsushi.github.io/assets/linux-virtual-memory/MMU.png "Image")
+![Image!](https://hotsushi.github.io/assets/linux-virtual-memory/abstract.png "Image")
+![Image!](https://hotsushi.github.io/assets/linux-virtual-memory/LinuxMemory.png "Image")
+![Image!](https://hotsushi.github.io/assets/linux-virtual-memory/process_switching.png "Image")
+![Image!](https://access.redhat.com/webassets/avalon/d/Red_Hat_Enterprise_Linux_for_Real_Time-7-Reference_Guide-en-US/images/e43a82d377ff4cf3a46398bc924a6893/5482.png "Image")
+![Image!](https://miro.medium.com/v2/resize:fit:1400/0*2Mea6PHrX_rMcRRk.png "Image")
+![Image!](https://miro.medium.com/v2/resize:fit:1100/format:webp/0*JpIeKzp4hmgBCVoS.png "Image")
+![Image!](https://miro.medium.com/v2/resize:fit:750/format:webp/0*NvCrS6tMv0fipPI9.gif "Image")
+![Image!](https://i.sstatic.net/R4tVn.png "Image")
+![Image!](https://i.sstatic.net/QU2ye.png "Image")
+
+
+
+
+
+
 
 
