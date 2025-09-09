@@ -183,11 +183,174 @@ LEFT JOIN B ON (A.i = B.i)
 WHERE B.i IS NULL;
 ```
 
+# DBMS : Normal Forms
 
+- https://www.freecodecamp.org/news/database-normalization-1nf-2nf-3nf-table-examples/
+- https://www.datacamp.com/tutorial/normalization-in-sql
+- https://popsql.com/blog/normalization-in-sql
+- https://www.geeksforgeeks.org/dbms/normal-forms-in-dbms/
+- https://www.sqlservercentral.com/articles/database-normalization-in-sql-with-examples
+- https://www.digitalocean.com/community/tutorials/database-normalization
+- https://www.simplilearn.com/tutorials/sql-tutorial/what-is-normalization-in-sql
+- https://www.studytonight.com/dbms/database-normalization.php
+- https://dotnetfullstackdev.medium.com/normalization-in-ms-sql-simple-terms-and-examples-fc85196972d7
 
+> The main purpose of database normalization is to avoid complexities, eliminate duplicates, and organize data in a consistent way. In normalization, the data is divided into several tables linked together with relationships.
+>
+> A primary key is a column that uniquely identifies the rows of data in that table. It’s a unique identifier such as an employee ID, student ID, voter’s identification number (VIN), and so on.
+> A foreign key is a field that relates to the primary key in another table.
+> A composite key is just like a primary key, but instead of having a column, it has multiple columns.
 
+> The First Normal Form – 1NF
+> For a table to be in the first normal form, it must meet the following criteria:
+> - a single cell must not hold more than one value (atomicity)
+> - there must be a primary key for identification
+> - no duplicated rows or columns
+> - each column must have only one value for each row in the table
+>
+> The Second Normal Form – 2NF
+> The 1NF only eliminates repeating groups, not redundancy. That’s why there is 2NF.
+> A table is said to be in 2NF if it meets the following criteria:
+> - it’s already in 1NF
+> - has no partial dependency. That is, all non-key attributes are fully dependent on a primary key.
+>
+>   The Third Normal Form – 3NF
+> When a table is in 2NF, it eliminates repeating groups and redundancy, but it does not eliminate transitive partial dependency.
+> This means a non-prime attribute (an attribute that is not part of the candidate’s key) is dependent on another non-prime attribute. This is what the third normal form (3NF) eliminates.
+> So, for a table to be in 3NF, it must:
+> - be in 2NF
+> - have no transitive partial dependency.
 
+![Image!](https://media.datacamp.com/cms/google/mmc6lomyxhnjn1b5em5oikuklwbyfisolv07jhdghsn03o5xafsvi4rbstojma2qwfhomadukokwizktqxhrta-x5seq8wxm9wxjkemt0vovjy1m_x1kxpn_xvyvotpv0u5lt_6gqrastqeaow9boae.png "Image")
+![Image!](https://www.sqlservercentral.com/wp-content/uploads/2020/02/img_5e365b819bde8.png "Image")
+![Image!](https://www.sqlservercentral.com/wp-content/uploads/2020/02/img_5e37abd765696.png "Image")
+![Image!](https://www.sqlservercentral.com/wp-content/uploads/2020/02/img_5e37ab33158c5.png "Image")
+![Image!](https://www.simplilearn.com/ice9/free_resources_article_thumb/normalizationinsql_13.png "Image")
+![Image!](https://www.simplilearn.com/ice9/free_resources_article_thumb/normalizationinsql_14.png "Image")
 
+```sql
+-- Unnormalized structure (not in 1NF)
+CREATE TABLE Purchases (
+    CustomerID INT,
+    CustomerName VARCHAR(100),
+    PurchasedProducts VARCHAR(255) -- Comma-separated values
+);
 
+-- Normalized 1NF structure
+CREATE TABLE CustomerProducts (
+    CustomerID INT,
+    CustomerName VARCHAR(100),
+    Product VARCHAR(100)
+);
+
+-- Sample data for CustomerProducts table (1NF)
+INSERT INTO CustomerProducts (CustomerID, CustomerName, Product) VALUES
+(101, 'John Doe', 'Laptop'),
+(101, 'John Doe', 'Mouse'),
+(102, 'Jane Smith', 'Tablet'),
+(103, 'Alice Brown', 'Keyboard'),
+(103, 'Alice Brown', 'Monitor'),
+(103, 'Alice Brown', 'Pen');
+```
+
+```sql
+-- Orders table after 2NF
+CREATE TABLE Orders (
+    OrderID INT PRIMARY KEY,
+    CustomerID INT,
+    Product VARCHAR(100)
+);
+
+-- Customers table after 2NF
+CREATE TABLE Customers (
+    CustomerID INT PRIMARY KEY,
+    CustomerName VARCHAR(100)
+);
+
+-- Example foreign key constraint
+ALTER TABLE Orders
+ADD FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID);
+
+-- Sample data for Customers and Orders (2NF)
+INSERT INTO Customers (CustomerID, CustomerName) VALUES
+(101, 'John Doe'),
+(102, 'Jane Smith');
+
+INSERT INTO Orders (OrderID, CustomerID, Product) VALUES
+(201, 101, 'Laptop'),
+(202, 101, 'Mouse'),
+(203, 102, 'Tablet');
+```
+
+```sql
+-- Sample data for Products and Suppliers (3NF)
+INSERT INTO Suppliers (SupplierID, SupplierName) VALUES
+(401, 'HP'),
+(402, 'Logitech'),
+(403, 'Apple');
+
+INSERT INTO Products (ProductID, ProductName, SupplierID) VALUES
+(301, 'Laptop', 401),
+(302, 'Mouse', 402),
+(303, 'Tablet', 403);
+
+INSERT INTO Orders (OrderID, CustomerID, ProductID) VALUES
+(201, 101, 301),
+(202, 101, 302),
+(203, 102, 303);
+```
+
+```sql
+-- Original table (not in BCNF)
+CREATE TABLE StudentCoursesWithInstructor (
+    StudentID INT,
+    Course VARCHAR(100),
+    Instructor VARCHAR(100)
+);
+
+-- Normalized BCNF tables
+
+-- Table tracking which students are in which courses
+CREATE TABLE StudentCourses (
+    StudentID INT,
+    Course VARCHAR(100),
+    PRIMARY KEY (StudentID, Course)
+);
+
+-- Table mapping each course to an instructor
+CREATE TABLE CourseInstructors (
+    Course VARCHAR(100) PRIMARY KEY,
+    Instructor VARCHAR(100)
+);
+
+-- Sample data for BCNF decomposition
+INSERT INTO StudentCourses (StudentID, Course) VALUES
+(1, 'Math'),
+(2, 'Math'),
+(3, 'History'),
+(4, 'History');
+
+INSERT INTO CourseInstructors (Course, Instructor) VALUES
+('Math', 'Dr. Smith'),
+('History', 'Dr. Jones');
+
+-- --
+
+-- Example: Creating separate tables for normalization
+CREATE TABLE Customers (
+    CustomerID INT PRIMARY KEY,
+    CustomerName VARCHAR(100)
+);
+
+CREATE TABLE Orders (
+    OrderID INT PRIMARY KEY,
+    CustomerID INT,
+    Product VARCHAR(100),
+    FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
+);
+```
+
+![Image!](https://doimages.nyc3.cdn.digitaloceanspaces.com/Temp-Vinayak/Database%20Normalization.png "Image")
+![Image!](https://doimages.nyc3.cdn.digitaloceanspaces.com/Temp-Vinayak/2nf%20to%203nf.png "Image")
 
 
