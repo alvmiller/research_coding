@@ -50,6 +50,53 @@ int main()
 }
 ```
 
+```c
+/*
+The implementation of the renameat2() system call is part of the Linux kernel and the GNU C Library (glibc), providing a Linux-specific way to rename files with enhanced control over atomic operations, like swapping files with RENAME_EXCHANGE or creating whiteout files for overlay filesystems using RENAME_WHITEOUT. A Python wrapper library, python-renameat2, also exists to provide a high-level interface to this system call. 
+Linux Kernel and glibc Implementation
+System Call:
+The core functionality resides in the Linux kernel, making renameat2() a Linux-specific system call, unlike the more portable rename() or renameat(). 
+GNU C Library (glibc):
+glibc provides the necessary wrapper functions and headers to use renameat2() in C applications. 
+Feature Support:
+renameat2() was added in Linux 3.15, with library support in glibc 2.28. 
+Key Features and Use Cases
+RENAME_EXCHANGE:
+Atomically exchanges the contents of two files. This is particularly useful for safely swapping two files or updating a file with its new version without a window of data loss. 
+RENAME_NOREPLACE:
+Prevents the overwrite of an existing newpath file. The operation fails if newpath already exists, requiring filesystem support for this functionality. 
+RENAME_WHITEOUT:
+Creates a special file on an overlay filesystem that hides or "whitens out" a file on a lower layer. This requires the CAP_MKNOD capability and support from filesystems like ext4, XFS, or shmem. 
+Python Wrapper (python-renameat2) 
+CFFI:
+The python-renameat2 library uses CFFI (C Foreign Function Interface for Python) to bridge the gap between Python and the underlying C library. 
+Enhanced File Operations:
+It offers Pythonic wrappers for RENAME_EXCHANGE, RENAME_NOREPLACE, and RENAME_WHITEOUT to enable these powerful, atomic file operations directly from Python. 
+*/
+```
+
+```c
+#include <stdio.h>
+#include <fcntl.h>
+#include <errno.h>
+
+int main()
+{
+    const char *real = "real.txt";
+    const char *container = "container.txt";
+    const char *tmp = "tmp.txt";
+    // container -> real
+    int ret = rename(container, tmp);
+    if (ret != 0) perror("[0] rename() error");
+    ret = rename(real, container);
+    if (ret != 0) perror("[1] rename() error");
+    ret = rename(tmp, real);
+    if (ret != 0) perror("[2] rename() error");
+
+    return 0;
+}
+```
+
 # C++ : SOLID , KISS
 
 - https://medium.com/@oleksandra_shershen/solid-principles-implementation-and-examples-in-c-99f0d7e3e868
