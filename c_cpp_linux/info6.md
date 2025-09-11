@@ -194,5 +194,131 @@ Continuously monitor your storage system's performance using key metrics like IO
 */
 ```
 
+# C : Inline
+
+- https://www.geeksforgeeks.org/c/inline-function-in-c/
+- https://en.wikipedia.org/wiki/Inline_(C_and_C%2B%2B)
+- https://en.cppreference.com/w/c/language/inline.html
+- https://gcc.gnu.org/onlinedocs/gcc/Inline.html
+- https://isocpp.org/wiki/faq/inline-functions
+- https://wnjoon.github.io/2025/03/17/inline-function-c/
+- https://www.greenend.org.uk/rjk/tech/inline.html
+- https://learn.microsoft.com/en-us/cpp/cpp/inline-functions-cpp?view=msvc-170
+
+> In C, an inline function is a type of function where the compiler replaces the function call with its actual code of the function, invoked through the usual function call mechanism. This can improve performance by reducing the overhead of function calls. The inline keyword is used to declare such functions, which are normally small and frequently called.
+
+```c
+inline return_type function_name(parameters) {
+   // Function body
+}
+```
+
+# C : Generic Macro
+
+- https://en.cppreference.com/w/c/language/generic.html
+- https://learn.microsoft.com/en-us/cpp/c-language/generic-selection?view=msvc-170
+- https://medium.com/@andrew_johnson_4/understanding-c-generic-selections-53ec66ff71e4
+- https://www.chiark.greenend.org.uk/~sgtatham/quasiblog/c11-generic/
+- https://www.ibm.com/docs/en/zos/2.4.0?topic=expressions-generic-selection-c11
+- https://www.geeksforgeeks.org/c/_generic-keyword-c/
+- https://man7.org/linux/man-pages/man3/_Generic.3.html
+- https://andrewjohnson4.substack.com/p/understanding-c-generic-selections
+- https://www.ibm.com/docs/de/xl-c-aix/13.1.2?topic=expressions-generic-selection-c11
+- https://dev.to/pauljlucas/generic-in-c-i48
+- http://www.robertgamble.net/2012/01/c11-generic-selections.html
+
+```c
+// -std=gnu11
+
+#include <stdio.h>
+
+#define TYPE_OF(x) _Generic((x), \
+    int: "int", \
+    float: "float", \
+    double: "double", \
+    char*: "string", \
+    default: "unknown type" \
+)
+int main() {
+    int i = 42;
+    float f = 3.14f;
+    double d = 2.71828;
+    char *s = "Hello, World!";
+    
+    printf("Type of i: %s\n", TYPE_OF(i));
+    printf("Type of f: %s\n", TYPE_OF(f));
+    printf("Type of d: %s\n", TYPE_OF(d));
+    printf("Type of s: %s\n", TYPE_OF(s));
+    return 0;
+}
+```
+
+```c
+#include <stdio.h>
+int main(void)
+{
+    // _Generic keyword acts as a switch that chooses
+    // operation based on data type of argument.
+    printf("%d\n", _Generic(1.0L, float : 1, double : 2,
+                            long double : 3, default : 0));
+  
+    printf("%d\n", _Generic(1L, float : 1, double : 2,
+                            long double : 3, default : 0));
+  
+    printf("%d\n", _Generic(1.0L, float : 1, double : 2,
+                            long double : 3));
+    return 0;
+}
+```
+
+# C : Macros and its types
+
+- https://www.geeksforgeeks.org/c/macros-and-its-types-in-c-cpp/
+- https://stackoverflow.com/questions/4364971/and-in-macros
+- https://gcc.gnu.org/onlinedocs/cpp/Concatenation.html
+- https://www.w3schools.com/c/c_macros.php
+- https://www.cs.yale.edu/homes/aspnes/pinewiki/C(2f)Macros.html
+- https://www.geeksforgeeks.org/c/stringizing-and-token-pasting-operators-in-c/
+- https://www.ibm.com/docs/en/i/7.6.0?topic=directive-function-like-macros
+
+```c
+#define DEBUG
+
+int main() {
+  #ifdef DEBUG
+    printf("Debug mode is ON\n");
+  #endif
+  return 0;
+}
+```
+
+```c
+#define Square(x) ((x)*(x))
+#define FOO (12)
+```
+
+```c
+   1 #include <stdio.h>
+   2 
+   3 #define Warning(...) fprintf(stderr, __VA_ARGS__)
+   4 
+   5 int
+   6 main(int argc, char **argv)
+   7 {
+   8     Warning("%s: this program contains no useful code\n", argv[0]);
+   9     
+  10     return 1;
+  11 }
+```
+
+```c
+#define NoisyInc2(x) (puts("Incrementing " #x), x++)
+#define FakeArray(n) fakeArrayVariableNumber ## n
+```
+
+
+
+
+
 
 
