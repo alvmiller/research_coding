@@ -33,7 +33,34 @@ The truth-teller would point to the freedom door, so the liar will lie and point
 In both scenarios, the door pointed to is the path to death, so you choose the other door to reach freedom. 
 ```
 
+# Angle between 2 vectors (atan2)
 
+- https://stackoverflow.com/questions/21483999/using-atan2-to-find-angle-between-two-vectors
+- https://wumbo.net/formulas/angle-between-two-vectors-2d/
+- https://gamedev.stackexchange.com/questions/203305/using-atan2-vs-dot-product-to-get-an-angle-in-2d-games
+- https://maththebeautiful.com/angle-between-points/
+- euclideanspace.com/maths/algebra/vectors/angleBetween/
+- https://www.jwwalker.com/pages/angle-between-vectors.html
+
+- https://github.com/alvmiller/vectors_angle
+
+```c
+/*
+   We always can move vector's start dot to (0,0)
+   and recalculate vector's coordinates
+   
+   A(Ax,Ay) B(Bx,By) -> V(Vx,Vy) : Vx=Bx-Ax Vy=By-Ay
+   
+   (v1,v2)=|v1||v2|cosL=v1x*v2x+v1y*v2y
+   [v1,v2]=|v1||v2|sinL=v1x*v2y-v1y*v2x
+   tgL=sinL/cosL=(v1x*v2y-v1y*v2x)/(v1x*v2x+v1y*v2y)=RES1/RES2
+   L=atan2(RES1,RES2)
+   
+   Currently, each vector should be started from (0,0)
+   
+   reset; gcc -Werror vector00s_angle.c main.c -lm -o main; ./main
+ */
+```
 
 
 
