@@ -375,9 +375,171 @@ clean:
 	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~
 ```
 
+# C : Endianness
 
+- https://keasigmadelta.com/blog/how-to-convert-endianness-in-c-c-in-4-different-ways/
+- https://aticleworld.com/little-and-big-endian-importance/
+- https://electro4u.net/blog/little-endian-and-big-endian-in-c-456
+- https://medium.com/mycsdegree/sockets-in-c-little-and-big-endian-machines-23c9ed484c20
+- https://cs-fundamentals.com/tech-interview/c/c-program-to-check-little-and-big-endian-architecture#google_vignette
+- https://embetronicx.com/tutorials/p_language/c/little-endian-and-big-endian/
 
+> The endian will decide how to store multiple bytes in computer memory.
+> It doesn’t mean, the order of bits inside a byte,  nor the way the computer reads an array of bytes or a file.
+> It’s all about the order of the bytes of a word (multi-byte variable) in memory.
+> 
+> In Little-endian, LSB (Least significant byte) is stored first or to a lower memory address. Intel x86, Pentium are using this Little Endian.
+> In Big Endian, MSB (Most significant byte) is stored first or to a lower memory address. Big-endian is implemented in PowerPC and most networking devices.
 
+> There is a lot of function which has used when we send the data to the network.
+> - htons() – “Host to Network Short”
+> - htonl() – “Host to Network Long”
+> - ntohs() – “Network to Host Short”
+> - ntohl() – “Network to Host Long”
+
+```
+Big Endian storing 1:
++-----------+-----------+-----------+-----------+
+| 0000 0000 | 0000 0000 | 0000 0000 | 0000 0001 |
++-----------+-----------+-----------+-----------+
+     1001        1002        1003        1004
+  low                                        high
+```
+
+```
+int x = 0x76543210;
+char *c = (char*) &x;
+
+Big endian format:
+------------------
+Byte address  | 0x01 | 0x02 | 0x03 | 0x04 | 
+              +++++++++++++++++++++++++++++
+Byte content  | 0x76 | 0x54 | 0x32 | 0x10 |
+			 
+Little endian format:
+---------------------
+Byte address  | 0x01 | 0x02 | 0x03 | 0x04 | 
+              +++++++++++++++++++++++++++++
+Byte content  | 0x10 | 0x32 | 0x54 | 0x76 |
+```
+
+```c
+#include <stdio.h>
+#include <inttypes.h>
+//Function to change one endian to another
+uint32_t ChangeEndianness(uint32_t u32Value)
+{
+    uint32_t u32Result = 0;
+    u32Result |= (u32Value & 0x000000FF) << 24;
+    u32Result |= (u32Value & 0x0000FF00) << 8;
+    u32Result |= (u32Value & 0x00FF0000) >> 8;
+    u32Result |= (u32Value & 0xFF000000) >> 24;
+    return u32Result;
+}
+int main()
+{
+    uint32_t u32CheckData  = 0x11223344;
+    uint32_t u32ResultData =0;
+    //swap the data
+    u32ResultData = ChangeEndianness(u32CheckData);
+    //converted data
+    printf("0x%x\n",u32ResultData);
+    return 0;
+}
+```
+
+```c
+#include <stdio.h>
+#include <inttypes.h>
+//Macro to swap the byte
+#define CHANGE_ENDIANNESS(A)   ((((uint32_t)(A) & 0xff000000) >> 24) \
+                               | (((uint32_t)(A) & 0x00ff0000) >> 8) \
+                               | (((uint32_t)(A) & 0x0000ff00) << 8)  \
+                               | (((uint32_t)(A) & 0x000000ff) << 24))
+int main()
+{
+    uint32_t u32CheckData  = 0x11223344;
+    uint32_t u32ResultData =0;
+    u32ResultData = CHANGE_ENDIANNESS(u32CheckData);
+    printf("0x%x\n",u32ResultData);
+    return 0;
+}
+```
+
+```c
+#include <stdio.h>
+#include <inttypes.h>
+typedef union
+{
+    uint32_t u32RawData;
+    uint8_t  au8DataBuff[4];
+} RawData;
+uint32_t ChangeEndianness(uint32_t u32Value)
+{
+    RawData uChangeData,uOrginalData;
+    uOrginalData.u32RawData = u32Value;
+    //change the value
+    uChangeData.au8DataBuff[0]  = uOrginalData.au8DataBuff[3];
+    uChangeData.au8DataBuff[1]  = uOrginalData.au8DataBuff[2];
+    uChangeData.au8DataBuff[2]  = uOrginalData.au8DataBuff[1];
+    uChangeData.au8DataBuff[3]  = uOrginalData.au8DataBuff[0];
+    return (uChangeData.u32RawData);
+}
+int main()
+{
+    uint32_t u32CheckData  = 0x11223344;
+    uint32_t u32ResultData =0;
+    u32ResultData = ChangeEndianness(u32CheckData);
+    printf("0x%x\n",u32ResultData);
+    return 0;
+}
+```
+
+![pic1](https://miro.medium.com/v2/resize:fit:1100/format:webp/0*07nm__pJLtkD74X_.png "pic1")
+![pic1](https://aticleworld.com/wp-content/uploads/2016/08/little-endian-big-endian.png "pic1")
+![pic1](https://aticleworld.com/wp-content/uploads/2016/08/4b.png "pic1")
+
+```c
+#include <stdio.h>
+int main ()
+{
+  unsigned int x = 0x76543210;
+  char *c = (char*) &x;
+ 
+  printf ("*c is: 0x%x\n", *c);
+  if (*c == 0x10)
+  {
+    printf ("Underlying architecture is little endian. \n");
+  }
+  else
+  {
+     printf ("Underlying architecture is big endian. \n");
+  }
+ 
+  return 0;
+}
+```
+
+```c
+int check_for_endianness()
+{
+  unsigned int x = 1;
+  char *c = (char*) &x;
+  return (int)*c;
+}
+```
+
+```c
+#include <stdio.h>
+#include <inttypes.h>
+int main()
+{
+    uint8_t au8RawBuf[4] = {0x01, 0x00,0x00,0x00};
+    uint32_t  u32RawData = *(uint32_t *)au8RawBuf;
+    printf("0x%x\n", u32RawData);
+    return 0;
+}
+```
 
 
 
