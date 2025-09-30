@@ -25,8 +25,33 @@ FROM (
 ) AS tmp;
 ```
 
+# SQL : Some examples
 
+- https://www.kdnuggets.com/2020/11/5-tricky-sql-queries-solved.html
+- https://www.geeksforgeeks.org/sql/most-common-sql-queries-that-you-should-know/
+- https://learnsql.com/blog/25-advanced-sql-query-examples/
+- https://popsql.com/blog/complex-sql-queries
+- https://bytescout.com/blog/20-important-sql-queries.html
+- https://medium.com/@jhoughton/fun-with-mysql-database-queries-c87c46a32a48
 
+## Binary Search Tree
+```
+We are given a table, which is a Binary Search Tree consisting of two columns Node and Parent. We must write a query that returns the node type ordered by the value of nodes in ascending order. There are 3 types.
+
+Root — if the node is a root
+Leaf — if the node is a leaf
+Inner — if the node is neither root nor leaf.
+```
+![img0](https://i.ibb.co/j6mMpB1/sura-sql-tricky-3.png)
+```sql
+SELECT CASE
+    WHEN P IS NULL THEN CONCAT(N, ' Root')
+    WHEN N IN (SELECT DISTINCT P from BST) THEN CONCAT(N, ' Inner')
+    ELSE CONCAT(N, ' Leaf')
+    END
+FROM BST
+ORDER BY N asc;
+```
 
 
 
