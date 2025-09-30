@@ -36,11 +36,12 @@ FROM (
 
 ## Binary Search Tree
 ```
-We are given a table, which is a Binary Search Tree consisting of two columns Node and Parent. We must write a query that returns the node type ordered by the value of nodes in ascending order. There are 3 types.
-
-Root — if the node is a root
-Leaf — if the node is a leaf
-Inner — if the node is neither root nor leaf.
+We are given a table, which is a Binary Search Tree consisting of two columns Node and Parent.
+We must write a query that returns the node type ordered by the value of nodes in ascending order.
+There are 3 types.
+- Root — if the node is a root
+- Leaf — if the node is a leaf
+- Inner — if the node is neither root nor leaf.
 ```
 ![img0](https://i.ibb.co/j6mMpB1/sura-sql-tricky-3.png)
 ```sql
@@ -52,6 +53,43 @@ SELECT CASE
 FROM BST
 ORDER BY N asc;
 ```
+
+## Users who purchased products on multiple days
+```
+We are given a transaction table that consists of transaction_id, user_id, transaction_date, product_id, and quantity.
+We need to query the number of users who purchased products on multiple days.
+(Note that a given user can purchase multiple products on a single day).
+```
+![img0](https://i.ibb.co/4SHQhds/sura-sql-tricky-4.png)
+```sql
+SELECT COUNT(user_id)
+FROM
+(
+SELECT user_id
+ FROM orders
+ GROUP BY user_id
+ HAVING COUNT(DISTINCT DATE(date)) > 1
+) t1
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
