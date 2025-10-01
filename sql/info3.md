@@ -507,135 +507,136 @@ SELECT
 FROM sales
 ```
 
-## TBD
+## Compute a Moving Average
 ```
-TBD
+A moving average is a time series technique for analyzing trends in data.
+It is calculated as the average of the current value and a specified number
+of immediately preceding values for each point in time.
+The main idea is to examine how these averages behave over time
+instead of examining the behavior of the original or raw data points.
+Let’s calculate the moving average for the last 7 days using the sales table from the previous example:
 
-TBD
+In the above query, we use the AVG() window function to calculate the average
+using the current row (today) and the previous 6 rows. As the rows are ordered by day,
+the current row and the 6 previous rows defines a period of 1 week.
 ```
 ```sql
-TBD
+SELECT
+  day,
+  daily_amount,
+  AVG (daily_amount) OVER (ORDER BY day ROWS 6 PRECEDING)
+    AS moving_average
+FROM sales
 ```
 
-## TBD
+## Compute a Difference (Delta) Between Two Columns on Different Rows
 ```
-TBD
-
-TBD
+There’s more than one way to calculate the difference between two rows in SQL.
+One way to do it is by using the window functions LEAD() and LAG(), as we will do in this example.
+Let’s suppose we want to obtain a report with the total amount sold on each day,
+but we also want to obtain the difference (or delta) related to the previous day.
+We can use a query like this one:
+The key expression in this query is:
+daily_amount - LAG(daily_amount) OVER (ORDER BY day)
+Both elements of the arithmetic difference come from different rows.
+The first element comes from the current row and LAG(daily_amount) comes from the previous day row.
+LAG() returns the value of any column from the previous row
+(based on the ORDER BY specified in the OVER clause).
 ```
 ```sql
-TBD
+SELECT
+  day,
+  daily_amount,
+  daily_amount - LAG(daily_amount) OVER (ORDER BY day)
+    AS delta_yesterday_today
+FROM sales
 ```
 
-## TBD
+## Use Recursive Queries to Manage Data Hierarchies
 ```
-TBD
-
-TBD
+Some tables in SQL can have an implicit kind of data hierarchy. As an example,
+our employee table has a manager_id for each employee.
+We have a manager who is in charge of other managers,
+who in turn have other employees under their charge, and so on.
+When we have this sort of organization, we can have a hierarchy of various levels.
+In each row, the column manager_id refers to the row on the immediate upper level in the hierarchy.
+In these cases, a frequent request is to obtain a list of all employees reporting (directly or indirectly)
+to the CEO of the company (who, in this case, has the employee_id of 110). The query to use is:
+In this query, we created a recursive CTE called subordinate.
+It’s the key part of this query because it traverses the data hierarchy
+going from one row to the rows in the hierarchy immediately below it.
+There are two subqueries connected by a UNION ALL; the first subquery returns
+the top row of the hierarchy and the second query returns the next level,
+adding those rows to the intermediate result of the query.
+Then the second subquery is executed again to return the next level,
+which again will be added to the intermediate result set.
+This process is repeated until no new rows are added to the intermediate result.
+Finally, the main query consumes the data in the subordinate
+CTE and returns data in the way we expect.
 ```
 ```sql
-TBD
+WITH RECURSIVE subordinate AS (
+ SELECT 
+   employee_id,
+   first_name,
+   last_name,
+   manager_id
+  FROM employee
+  WHERE employee_id = 110 -- id of the top hierarchy employee (CEO)
+  
+  UNION ALL
+  
+  SELECT 
+    e.employee_id,
+    e.first_name,
+    e.last_name,
+    e.manager_id
+  FROM employee e
+  JOIN subordinate s
+  ON e.manager_id = s.employee_id
+)
+SELECT 
+  employee_id,
+  first_name,
+  last_name,
+  manager_id
+FROM subordinate ;
 ```
 
-## TBD
+## Find the Length of a Series Using Window Functions
 ```
-TBD
-
-TBD
+Suppose we have a table with user registration data. We store information
+about how many users registered on each date. We define a data series as the sequence of consecutive days
+when users registered. A day when no user registers breaks the data series. For each data series,
+we want to find its length.
+There are 3 different data series shown in different colors.
+We are looking for a query to obtain the length of each data series.
+The first data series starts on Jan 25 and has a length of 3 elements,
+the second one starts on Jan 30 and its length is 4, and so on.
+The query is as follows:
+In the previous query, the CTE has the column series_id, which is a value intended
+to be used as an ID for the rows in the same data series. In the main query,
+the GROUP BY series_id clause is used to aggregate rows of the same data series.
+Then we can obtain the start of the series with MIN(day) and its end with MAX(day).
+The length of the series is calculated with the expression:
+MAX(day) - MIN (day) + 1
 ```
 ```sql
-TBD
+WITH data_series AS (
+  SELECT   
+    RANK() OVER (ORDER BY day) AS row_number,
+    day,
+    day - RANK() OVER (ORDER BY day) AS series_id
+ FROM   user_registration )
+SELECT 
+  MIN(day) AS series_start_day,
+  MAX(day) AS series_end_day,
+  MAX(day) - MIN (day) + 1 AS series_length
+FROM    data_series
+GROUP BY series_id
+ORDER BY series_start_date
 ```
 
-## TBD
-```
-TBD
-
-TBD
-```
-```sql
-TBD
-```
-
-## TBD
-```
-TBD
-
-TBD
-```
-```sql
-TBD
-```
-
-## TBD
-```
-TBD
-
-TBD
-```
-```sql
-TBD
-```
-
-## TBD
-```
-TBD
-
-TBD
-```
-```sql
-TBD
-```
-
-## TBD
-```
-TBD
-
-TBD
-```
-```sql
-TBD
-```
-
-## TBD
-```
-TBD
-
-TBD
-```
-```sql
-TBD
-```
-
-## TBD
-```
-TBD
-
-TBD
-```
-```sql
-TBD
-```
-
-## TBD
-```
-TBD
-
-TBD
-```
-```sql
-TBD
-```
-
-## TBD
-```
-TBD
-
-TBD
-```
-```sql
-TBD
-```
 
 
 
