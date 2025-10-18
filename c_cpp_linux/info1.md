@@ -149,6 +149,39 @@ public:
 ![Image!](https://ars.els-cdn.com/content/image/3-s2.0-B9780128182000000160-f05-09-9780128182000.jpg "Image")
 ![Image!](https://ars.els-cdn.com/content/image/3-s2.0-B0122272404001878-gr10.gif "Image")
 
+- https://www.f5.com/glossary/quic-http3
+- https://kinsta.com/blog/http3/
+- https://medium.com/@gtamilarasan/a-closer-look-at-http3-quic-1b2b97a5cd50
+- https://www.haproxy.com/blog/choosing-the-right-transport-protocol-tcp-vs-udp-vs-quic
+- https://www.geeksforgeeks.org/computer-networks/what-is-quic-and-http-3/
+- https://http3-explained.haxx.se/en/specs
+- https://en.wikipedia.org/wiki/QUIC
+- https://www.stackscale.com/blog/http3/
+- https://www.debugbear.com/blog/http3-quic-protocol-guide
+- https://www.cdnetworks.com/blog/media-delivery/what-is-quic/
+
+> QUIC is a transport protocol that runs on top of User Datagram Protocol (UDP)
+> and serves as the foundation for HTTP/3, which is the latest version of the Hypertext Transfer Protocol.
+> QUIC uses UDP instead of the older Transmission Control Protocol (TCP) to improve web performance
+> by reducing latency and eliminating head-of-line blocking, a problem where a single lost packet can delay an entire connection.  
+> How they work together
+> - QUIC on UDP: QUIC was designed to replace TCP and is built on top of UDP, which is less reliable but faster and more flexible for this purpose. 
+> - HTTP/3 on QUIC: HTTP/3 is the application layer protocol that uses QUIC as its transport layer, moving away from the TCP+HTTP/2 model. 
+> - Built-in encryption: Unlike previous versions that added TLS for security, QUIC integrates Transport Layer Security (TLS) encryption from the start, combining the handshake process and speeding up connection establishment. 
+> - Eliminating head-of-line blocking: In TCP, a lost packet can halt all streams on a connection. QUIC handles multiple streams independently, so a delay in one stream does not impact others. 
+> - Faster connections: QUIC enables faster connection establishment with 0-RTT and 1-RTT handshakes, meaning the client and server can often exchange data sooner. 
+> Why this matters
+> - Faster performance: The combination of UDP, QUIC, and HTTP/3 leads to faster page load times and a smoother user experience. 
+> - Improved mobile support: QUIC's ability to handle network changes smoothly is ideal for mobile users who frequently switch between Wi-Fi and cellular networks. 
+> - Increased efficiency: By streamlining the connection and security setup, QUIC and HTTP/3 make web communication more efficient. 
+
+![Image!](https://www.debugbear.com/assets/images/http11-2-3-comparison-88d3a12d6cc3f5422c3700a7f2f8c76b.jpg "Image")
+![Image!](https://www.debugbear.com/assets/images/tlsv13-vs-quic-handshake-d9672525e7ba84248647581b05234089.jpg "Image")
+![Image!](https://www.debugbear.com/assets/images/http2-vs-http3-roundtrips-1b14a7c6b6f7badbd345f67895dbf142.jpg "Image")
+![Image!](https://www.debugbear.com/assets/images/http2-vs-quic-multiplexing-36d594c1c356cae410fe60cfc2945d91.jpg "Image")
+![Image!](https://www.f5.com/content/dam/f5-com/nginx-import/HTTP-v1-v2-v3-stacks.png "Image")
+![Image!](https://www.f5.com/content/dam/f5-com/nginx-import/primer-QUIC-networking-encryption_stream-anatomy.png "Image")
+
 # ARM Cortex-M
 
 - https://en.wikipedia.org/wiki/ARM_Cortex-M
