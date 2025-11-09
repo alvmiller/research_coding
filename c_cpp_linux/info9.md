@@ -107,7 +107,7 @@ int main() {
 
 ![pic1](https://media.geeksforgeeks.org/wp-content/uploads/Onion-Routing-Page-1.png "pic1")
 
-> Onion Routing Circuit(made using lucid chart)
+> **Onion Routing Circuit** (made using lucid chart)
 > 1. The client with access to all the encryption keys i.e key 1, key 2 & key 3 encrypts the message(get request)
 >    thrice wrapping it under 3 layers like an onion which have to be peeled one at a time.
 > 2. This triple encrypted message is then sent to the first server i.e. Node 1(Input Node).
