@@ -142,6 +142,28 @@ int main() {
 ![pic1](https://vfunction.com/wp-content/uploads/2024/05/airbnb-distributed-architecture-example-1509x1536.jpeg "pic1")
 ![pic1](https://res.cloudinary.com/elatov/image/upload/v1591415062/blog-pics/dsd-twitter/twitter-sda-4.png "pic1")
 
+# HTTP
+
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods
+- https://www.w3schools.com/tags/ref_httpmethods.asp
+- https://kinsta.com/blog/what-is-an-http-request/
+- https://www.codecademy.com/article/what-is-http
+- https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.httprequest/#send-body
+- https://www.geeksforgeeks.org/node-js/different-kinds-of-http-requests/
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview
+- https://www.geeksforgeeks.org/blogs/http-full-form/
+- https://developer.mozilla.org/en-US/docs/Web/HTTP
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers
+- https://developer.mozilla.org/en-US/docs/Glossary/Request_header
+- https://blog.postman.com/what-are-http-headers/
+- https://www.geeksforgeeks.org/web-tech/http-headers/
+- https://beeceptor.com/docs/concepts/http-headers/
+- https://learn.microsoft.com/en-us/dotnet/api/system.net.http.headers.httprequestheaders?view=net-9.0
+- https://developers.cloudflare.com/fundamentals/reference/http-headers/
+
+![pic1](https://www.aisangam.com/blog/wp-content/uploads/2019/10/HTTPRequestMessageFormat.png "pic1")
+![pic1](https://www.testkarts.com/assets/images/HTTP-Reuest-Method-by-testkarts-39f48366306faf29d2ed22fd0bc5b001.jpg "pic1")
+
 
 
 
