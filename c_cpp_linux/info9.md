@@ -123,6 +123,24 @@ int main() {
 > 9. It finally reaches the client in the form of a triple encrypted response which can be decrypted
 >     since the client has access to all the keys
 
+# Design
+
+- https://www.geeksforgeeks.org/computer-networks/architecture-styles-in-distributed-systems/
+- https://estuary.dev/blog/distributed-architecture/
+- https://vfunction.com/blog/distributed-architecture/
+- https://medium.com/javarevisited/most-used-distributed-system-patterns-d5d90ffedf33
+- https://www.atlassian.com/microservices/microservices-architecture/distributed-architecture
+- https://dev.to/somadevtoo/9-software-architecture-patterns-for-distributed-systems-2o86
+- https://www.contentful.com/blog/distributed-system-design-microservices-communication/
+- https://circleci.com/blog/distributed-systems/
+- https://martinfowler.com/articles/patterns-of-distributed-systems/
+- https://elatov.github.io/2021/01/distributed-systems-design-twitter/
+
+![pic1](https://vfunction.com/wp-content/uploads/2024/05/distributed-architecture.jpeg "pic1")
+![pic1](https://vfunction.com/wp-content/uploads/2024/05/netflix-distributed-architecture-example.jpeg "pic1")
+![pic1](https://vfunction.com/wp-content/uploads/2024/05/uber-distributed-architecture-example.jpeg "pic1")
+![pic1](https://vfunction.com/wp-content/uploads/2024/05/airbnb-distributed-architecture-example-1509x1536.jpeg "pic1")
+![pic1](https://res.cloudinary.com/elatov/image/upload/v1591415062/blog-pics/dsd-twitter/twitter-sda-4.png "pic1")
 
 
 
