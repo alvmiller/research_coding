@@ -164,7 +164,50 @@ int main() {
 ![pic1](https://www.aisangam.com/blog/wp-content/uploads/2019/10/HTTPRequestMessageFormat.png "pic1")
 ![pic1](https://www.testkarts.com/assets/images/HTTP-Reuest-Method-by-testkarts-39f48366306faf29d2ed22fd0bc5b001.jpg "pic1")
 
+# C
 
+> popen() example
+
+```c
+// https://www.onlinegdb.com/online_c_compiler
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdint.h>
+#include <string.h>
+#include <stdbool.h>
+
+int main()
+{
+    //system("df -a");
+    
+    FILE *fd = popen("df -a", "r");
+    if(fd == NULL) {
+        fprintf(stderr, "Could not open pipe.\n");
+        return -1;
+    }
+    char buffer[10000] = {};
+    const char *str_search = "/opt/container_session_storage";
+    bool is_found = false;
+    printf("String\n");
+    while(fgets(buffer, 10000, fd) != NULL) {
+        printf("%s", buffer);
+        if (strstr(buffer, str_search) != NULL) {
+            is_found = true;
+            printf("----found----\n");
+            continue;
+            //break;
+        }
+    }
+    printf("\n");
+    if (is_found) {
+        printf("\n\nFOUND: %s\n\n", str_search);
+    }
+	(void)pclose(fd);
+
+    return 0;
+}
+```
 
 
 
