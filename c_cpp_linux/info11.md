@@ -13,6 +13,8 @@
 - https://safecpp.org/draft.html
 - https://thenewstack.io/secure-coding-in-c-avoid-buffer-overflows-and-memory-leaks/
 - https://www.mayhem.security/blog/best-practices-for-secure-programming-in-c
+- https://www.nayuki.io/page/undefined-behavior-in-c-and-cplusplus-programs
+- https://pdos.csail.mit.edu/papers/stack:sosp13.pdf
 
 - https://patents.google.com/patent/US11586761B2/en
 - https://patents.google.com/patent/US7930537/en
