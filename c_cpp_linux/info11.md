@@ -19,6 +19,11 @@
 - https://patents.google.com/patent/US11586761B2/en
 - https://patents.google.com/patent/US7930537/en
 
+- https://www.open-std.org/jtc1/sc22/wg14/www/docs/n3176.pdf
+- https://www.nayuki.io/page/undefined-behavior-in-c-and-cplusplus-programs
+- https://en.wikipedia.org/wiki/C2Y_(C_standard_revision)
+- https://developers.redhat.com/articles/2024/12/11/making-memcpynull-null-0-well-defined
+
 
 
 
