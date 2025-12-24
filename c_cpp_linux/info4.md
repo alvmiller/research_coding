@@ -121,6 +121,10 @@ int main()
 - https://www.sciencedirect.com/science/article/pii/S2666281723002019
 - https://docs.nvidia.com/jetson/archives/r36.4.3/DeveloperGuide/SD/Security/FSKP.html
 
+- https://wiki.qemu.org/Main_Page
+- https://www.qemu.org/docs/master/system/devices/emmc.html
+- https://www.phoronix.com/news/Linux-6.12-RPMB-MMC
+
 > Hardware Security Module (HSM)
 > HSM is perhaps the most overloaded term in the hardware security space. The term HSM is sometimes used to refer to any type of discrete hardware security device including a Secure Element or TPM. This is particularly true in the automotive market where Secure Elements are often referred to as a HSM.
 > In addition to being used as a generic term, an HSM also refers to large (and often expensive) hardware security appliances primarily used in data center operations. Context is therefore key to understanding how the term HSM is used.
