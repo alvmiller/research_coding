@@ -182,6 +182,36 @@ public:
 ![Image!](https://www.f5.com/content/dam/f5-com/nginx-import/HTTP-v1-v2-v3-stacks.png "Image")
 ![Image!](https://www.f5.com/content/dam/f5-com/nginx-import/primer-QUIC-networking-encryption_stream-anatomy.png "Image")
 
+# Big Data
+
+- https://www.bigdatalab.com.ua/
+- https://www.bigdatalab.com.ua/wp-content/uploads/2025/10/STUDY_2025_.pdf
+
+# Embedded Development / OS / ARM
+
+- https://www.udemy.com/course/armv8-exception-level1
+- ARM 64-Bit Assembly Language by Larry D Pyeatt, William Ughetta
+- https://wiki.osdev.org/Expanded_Main_Page
+- https://wiki.osdev.org/Books
+- https://www.archadept.com/barriers101
+- https://www.udemy.com/course/armv8-exception-crash1
+- https://www.udemy.com/course/armv8-exception-level1
+
+- https://www.youtube.com/playlist?list=PLAwxTw4SYaPmqpjgrmf4-DGlaeV0om4iP
+- https://www.youtube.com/playlist?list=PLAwxTw4SYaPkNw98-MFodLzKgi6bYGjZs
+- https://www.youtube.com/playlist?list=PLAwxTw4SYaPnhRXZ6wuHnnclMLfg_yjHs
+- https://www.youtube.com/playlist?list=PLAwxTw4SYaPn79fsplIuZG34KwbkYSedj
+- https://www.youtube.com/playlist?list=PLAwxTw4SYaPkr-vo9gKBTid_BWpWEfuXe
+- https://www.youtube.com/playlist?list=PLAwxTw4SYaPndXEsI4kAa6BDSTRbkCKJN
+
+- https://beetroot.academy/courses/online/kurs-embedded-development?utm_source=pr&utm_medium=telegram&utm_campaign=ed_december
+- https://www.yoctoproject.org/
+- https://www.udemy.com/courses/search/?src=ukw&q=Embedded+Development
+- https://www.freecodecamp.org/news/learn-embedded-systems-firmware-basics-handbook-for-devs/
+- https://rust-lang.org/what/embedded/
+- https://github.com/m3y54m/Embedded-Engineering-Roadmap
+- https://nptel.ac.in/courses/106105193
+
 # ARM Cortex-M
 
 - https://en.wikipedia.org/wiki/ARM_Cortex-M
