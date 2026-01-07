@@ -187,7 +187,7 @@ public:
 - https://www.bigdatalab.com.ua/
 - https://www.bigdatalab.com.ua/wp-content/uploads/2025/10/STUDY_2025_.pdf
 
-# Embedded Development / OS / ARM
+# Embedded Development / OS / ARM / TEE
 
 - https://www.udemy.com/course/armv8-exception-level1
 - ARM 64-Bit Assembly Language by Larry D Pyeatt, William Ughetta
@@ -211,6 +211,39 @@ public:
 - https://rust-lang.org/what/embedded/
 - https://github.com/m3y54m/Embedded-Engineering-Roadmap
 - https://nptel.ac.in/courses/106105193
+
+- https://goteleport.com/blog/tpm-vs-hsm-difference/
+
+- https://www.ssl2buy.com/wiki/tpm-vs-hsm
+- https://sidechainsecurity.com/what-is-the-difference-between-tpm-and-hsm-security/
+- https://cheapsslweb.com/blog/what-is-the-difference-between-tpm-vs-hsm/
+- https://sslinsights.com/tpm-vs-hsm/
+- https://www.wolfssl.com/difference-hsm-tpm-secure-enclave-secure-element-hardware-root-trust/
+- https://www.tropicsquare.com/blogs/hardware-security-understanding-the-differences-between-a-secure-element-tpm-hsm-and-a-tee
+- https://www.sdcard.org/developers/boot-and-new-security-features/replay-protected-memory-block/
+- https://sergioprado.blog/rpmb-a-secret-place-inside-the-emmc/
+- https://www.sciencedirect.com/science/article/pii/S2666281723002019
+- https://docs.nvidia.com/jetson/archives/r36.4.3/DeveloperGuide/SD/Security/FSKP.html
+- https://wiki.qemu.org/Main_Page
+- https://www.qemu.org/docs/master/system/devices/emmc.html
+- https://www.phoronix.com/news/Linux-6.12-RPMB-MMC
+
+- ARMv8-A-Programmer-Guide.pdf
+- ARM Security Technology. Building a Secure System using TrustZone Technology
+- Fundamentals of ARMv8A Version 1.0 (2017)
+- Programmer’s Guide for ARMv8-A (2015)
+
+- https://developer.arm.com/documentation/102418/0102/What-is-TrustZone-
+- https://cs140e.sergio.bz/docs/ARMv8-A-Programmer-Guide.pdf
+- https://developer.arm.com/architectures/Firmware%20Framework%20for%20A-Profile
+- https://github.com/ARM-software/ff-a-acs
+- https://github.com/ARM-software/ff-a-acs/blob/main/docs/Arm_FF_A_ACS_Validation_Methodology.pdf
+- https://github.com/ARM-software/arm-trusted-firmware/tree/master/services/spd
+- https://github.com/Linaro/virtio-msg-spec/releases/tag/virtio-msg-rfc2-Linaro-draft-v17
+- https://developer.arm.com/documentation/den0153/0100/?lang=en
+- https://www.youtube.com/watch?v=f3cVGxF7DrM
+- http://classweb.ece.umd.edu/enee447/ARMv8-Documentation/fundamentals_of_armv8_a_100878_0100_en.pdf
+- https://www.arm.com/architecture/learn-the-architecture/a-profile
 
 # ARM Cortex-M
 
