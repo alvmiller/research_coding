@@ -97,7 +97,7 @@ int main()
 }
 ```
 
-# C++ : SOLID , KISS
+# C++ : SOLID , KISS , OOP , GoF , GRASP
 
 - https://medium.com/@oleksandra_shershen/solid-principles-implementation-and-examples-in-c-99f0d7e3e868
 - https://www.geeksforgeeks.org/system-design/solid-principle-in-programming-understand-with-real-life-examples/
@@ -114,6 +114,12 @@ int main()
 - https://medium.com/@reetesh043/embracing-simplicity-in-coding-the-kiss-principle-bbaef4c9a99c
 - https://en.wikipedia.org/wiki/KISS_principle
 - https://en.wikipedia.org/wiki/SOLID
+- https://www.fluentcpp.com/2021/06/23/grasp-9-must-know-design-principles-for-code/
+- https://www.instructables.com/Learn-To-Grasp-C-Pointers/
+- https://github.com/jsalvasoler/trigger_arc_tsp
+- https://www.digitalocean.com/community/tutorials/gangs-of-four-gof-design-patterns
+- https://medium.com/@oleksandra_shershen/solid-principles-implementation-and-examples-in-c-99f0d7e3e868
+- https://simple.wikipedia.org/wiki/SOLID_(object-oriented_design)
 
 > S — Single Responsibility Principle (SRP)
 > O — Open-Closed Principle (OCP)
