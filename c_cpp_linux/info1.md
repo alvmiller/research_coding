@@ -212,6 +212,9 @@ public:
 - https://github.com/m3y54m/Embedded-Engineering-Roadmap
 - https://nptel.ac.in/courses/106105193
 
+- https://www.linaro.org/blog/linaro-enables-op-tee-rpmb-access-directly-from-the-linux-kernel/
+- https://www.phoronix.com/news/Linux-6.12-RPMB-MMC
+
 - https://goteleport.com/blog/tpm-vs-hsm-difference/
 
 - https://www.ssl2buy.com/wiki/tpm-vs-hsm
