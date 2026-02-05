@@ -197,6 +197,9 @@ public:
 - https://www.udemy.com/course/armv8-exception-crash1
 - https://www.udemy.com/course/armv8-exception-level1
 
+- https://github.com/google/crosvm
+- https://crosvm.dev/book/
+
 - https://www.youtube.com/playlist?list=PLAwxTw4SYaPmqpjgrmf4-DGlaeV0om4iP
 - https://www.youtube.com/playlist?list=PLAwxTw4SYaPkNw98-MFodLzKgi6bYGjZs
 - https://www.youtube.com/playlist?list=PLAwxTw4SYaPnhRXZ6wuHnnclMLfg_yjHs
