@@ -128,6 +128,9 @@ int main()
 - https://www.linaro.org/blog/linaro-enables-op-tee-rpmb-access-directly-from-the-linux-kernel/
 - https://www.phoronix.com/news/Linux-6.12-RPMB-MMC
 
+- https://github.com/google/crosvm
+- https://crosvm.dev/book/
+
 > Hardware Security Module (HSM)
 > HSM is perhaps the most overloaded term in the hardware security space. The term HSM is sometimes used to refer to any type of discrete hardware security device including a Secure Element or TPM. This is particularly true in the automotive market where Secure Elements are often referred to as a HSM.
 > In addition to being used as a generic term, an HSM also refers to large (and often expensive) hardware security appliances primarily used in data center operations. Context is therefore key to understanding how the term HSM is used.
