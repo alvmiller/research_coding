@@ -31,6 +31,9 @@
 - https://www.starlab.io/blog/a-brief-tour-of-linux-security-modules
 - https://madhuakula.com/content/linux-security-internals/linuxarch/
 
+- https://github.com/google/crosvm
+- https://crosvm.dev/book/
+
 ![pic1](https://miro.medium.com/v2/resize:fit:1100/format:webp/1*EfXt-VHmB2aMzNyLIlMZkQ.png "pic1")
 ![pic1](https://miro.medium.com/v2/resize:fit:1100/format:webp/1*brinuFUa3Wpc-9xa7tVRuA.png "pic1")
 ![pic1](https://source.android.com/docs/security/images/android-software-stack.png"pic1")
