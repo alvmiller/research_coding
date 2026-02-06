@@ -251,6 +251,31 @@ public:
 - http://classweb.ece.umd.edu/enee447/ARMv8-Documentation/fundamentals_of_armv8_a_100878_0100_en.pdf
 - https://www.arm.com/architecture/learn-the-architecture/a-profile
 
+- https://github.com/google/crosvm
+- https://crosvm.dev/book/
+- https://commoncriteriaportal.org/index.cfm
+- https://commoncriteriaportal.org/files/epfiles/NSCIB-CC-0486650-ST-v1.91.pdf
+- https://crosvm.dev/book/
+- https://crosvm.dev/book/hypervisors.html
+- https://crosvm.dev/book/print.html
+- https://developer.android.com/courses/pathways/android-architecture
+- https://medium.com/clean-android-dev/the-real-clean-architecture-in-android-part-1-s-o-l-i-d-6a661b103451
+- https://github.com/PacktPublishing/Modern-Android-13-Development-Cookbook
+- https://github.com/PacktPublishing
+- https://proandroiddev.com/a-flexible-modern-android-app-architecture-complete-step-by-step-d76901e29993
+- https://github.com/tdcolvin/PlanetSpotters
+- https://developer.android.com/topic/architecture/intro
+- https://source.android.com/docs/security
+- https://cs.android.com/android/platform/superproject
+- https://getstream.io/blog/android-developer-roadmap-part-1/
+- https://getstream.io/blog/design-patterns-and-architecture-the-android-developer-roadmap-part-4/
+- https://getstream.io/blog/android-developer-roadmap/
+- https://getstream.io/blog/android-avengers-chat-app-part-1/
+- https://getstream.io/blog/android-developer-roadmap-part-5/
+- https://getstream.io/blog/android-developer-roadmap-part-2/
+- https://getstream.io/blog/exploring-now-in-android/
+- https://getstream.io/blog/compose-tutorials/
+
 # ARM Cortex-M
 
 - https://en.wikipedia.org/wiki/ARM_Cortex-M
