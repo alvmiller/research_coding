@@ -156,6 +156,68 @@ int main()
 - https://getstream.io/blog/exploring-now-in-android/
 - https://getstream.io/blog/compose-tutorials/
 
+- https://source.android.com/docs/core/virtualization
+- https://source.android.com/docs/automotive/virtualization/architecture
+- https://source.android.com/docs/core/virtualization
+- https://android.googlesource.com/platform/external/rust/crates/vhost-device-vsock/
+- https://source.android.com/docs/core/virtualization/virtualization-service
+- https://medium.com/@F.DL/understanding-vsock-684016cf0eb0
+- https://crosvm.dev/book/devices/vsock.html
+- https://android.googlesource.com/platform/external/rust/crates/virtio-vsock/
+- https://lpc.events/event/16/contributions/1330/attachments/961/1882/LPC2022%20-%20Android%20Virtualization%20Framework%20.pdf
+- https://av.tib.eu/media/52823
+
+- https://dl.acm.org/doi/pdf/10.1145/3448609
+
+- https://owasp.org/www-project-top-ten/
+- https://www.cve.org/
+- https://cwe.mitre.org/
+
+- https://www.youtube.com/watch?v=jIQEjDiSe0g&list=PLH3pq2J85xsPYn71_yzzsZQKvalTW-duE
+- https://android.googlesource.com/platform/system/secretkeeper/
+
+- https://source.android.com/docs/security/features/keystore
+- https://source.android.com/docs/security/features/biometric
+- https://source.android.com/docs/security/features/authentication/gatekeeper
+- https://cs.android.com/android/platform/superproject/main/+/main:hardware/interfaces/security/secretkeeper/aidl/android/hardware/security/secretkeeper/ISecretkeeper.aidl
+- https://source.android.com/docs/security/features/keystore
+- https://source.android.com/docs/security/features/authentication/gatekeeper
+
+- https://pigweed.googlesource.com/open-dice/+/HEAD/docs/android.md#versions
+- https://source.android.com/docs/security/features/biometric
+- https://source.android.com/docs/security/features/authentication/gatekeeper
+- https://source.android.com/docs/security/features/keystore
+- https://android.googlesource.com/platform//hardware/interfaces/+/refs/heads/main/security/see/hdcp/
+- https://android.googlesource.com/platform//hardware/interfaces/+/refs/heads/main/security/see/storage/
+- https://android.googlesource.com/platform//hardware/interfaces/+/refs/heads/main/security/see/authmgr/aidl
+- https://docs.qualcomm.com/bundle/publicresource/topics/80-63442-2/overview.html
+
+- https://ieeexplore.ieee.org/document/10609716
+- https://ipads.se.sjtu.edu.cn/_media/publications/feng-isca24.pdf
+
+- https://dl.acm.org/doi/10.1145/3548606.3560627
+
+- https://phala.com/posts/Phala-GPU-TEE-Deep-Dive
+- https://arxiv.org/html/2501.11771v3
+- https://dl.acm.org/doi/pdf/10.1145/3548606.3560627
+
+- https://github.com/ARM-software/cca-rmm-acs/blob/main/test/command/cmd_attestation_token_init/cmd_attestation_token_init_realm.c
+- https://www.arm.com/architecture/security-features/arm-confidential-compute-architecture
+- https://developer.arm.com/documentation/ka006313/latest/
+- https://www.usenix.org/system/files/osdi22-li.pdf
+- https://docs.kernel.org/arch/arm64/arm-cca.html
+- https://www.ietf.org/archive/id/draft-ffm-rats-cca-token-00.html
+- https://cacm.acm.org/practice/elevating-security-with-arm-cca/
+- https://www.usenix.org/publications/loginonline/enabling-realms-arm-confidential-compute-architecture
+- https://developer.arm.com/documentation/den0126/latest
+- https://github.com/ConfidentialComputing/islet
+- https://developer.arm.com/documentation/den0125/latest/
+- https://github.com/ARM-software/cca-rmm-acs
+- https://www.trustedfirmware.org/projects/tf-rmm/
+
+- https://developer.android.com/reference/android/telephony/TelephonyCallback.SignalStrengthsListener
+- https://source.android.com/docs/core/connect/signal-strength
+
 > Hardware Security Module (HSM)
 > HSM is perhaps the most overloaded term in the hardware security space. The term HSM is sometimes used to refer to any type of discrete hardware security device including a Secure Element or TPM. This is particularly true in the automotive market where Secure Elements are often referred to as a HSM.
 > In addition to being used as a generic term, an HSM also refers to large (and often expensive) hardware security appliances primarily used in data center operations. Context is therefore key to understanding how the term HSM is used.
