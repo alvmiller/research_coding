@@ -280,7 +280,22 @@ int main() {
 - https://en.wikipedia.org/wiki/Stack-based_memory_allocation
 - https://www.geeksforgeeks.org/dsa/stack-vs-heap-memory-allocation/
 - https://www.cs.cornell.edu/courses/cs3410/2025sp/notes/mem.html
-- 
+
+- https://medium.com/@sachinadlakha7/posix-threads-in-linux-a-complete-implementation-guide-0ca9de562c45
+- https://membarrier.wordpress.com/2024/08/10/memory-management-the-mmap-call/
+- https://my.eng.utah.edu/~cs4400/malloc.pdf
+- https://blog.gistre.epita.fr/posts/matheo.crespel-2025-06-12-memory_management/
+- https://comp.anu.edu.au/courses/comp2310/labs/05-malloc/
+- https://www.linkedin.com/pulse/understanding-memory-allocation-linux-relation-brk-pratap-singh-y3icc
+- https://levelup.gitconnected.com/malloc-from-scratch-dbc1bc23dfde
+- https://www.cse.iitb.ac.in/~mythili/os/iitb_slides/memory-syscall.pdf
+- https://docs.kernel.org/admin-guide/mm/index.html
+- https://linux-kernel-labs.github.io/refs/heads/master/lectures/memory-management.html
+- https://lambdafunc.medium.com/linux-memory-management-2c13b5e386f1
+- https://docs.kernel.org/mm/index.html
+- https://achilles.tu.kielce.pl/portal/Members/84df831b59534bdc88bef09b15e73c99/archive/semestr-ii-2019-2020/pdf/os2/os2_lecture_10.pdf
+- https://www.linuxjournal.com/content/linux-memory-management-understanding-page-tables-swapping-and-memory-allocation
+- https://zedas.fr/posts/linux-explained-7-memory-management/
 
 > - alloca
 > - malloc calloc free realloc
