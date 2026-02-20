@@ -218,6 +218,52 @@ int main()
 - https://developer.android.com/reference/android/telephony/TelephonyCallback.SignalStrengthsListener
 - https://source.android.com/docs/core/connect/signal-strength
 
+- https://www.youtube.com/watch?v=zL9x5q6UTuA
+- https://medium.com/@mallahzaib80/android-under-the-hood-the-modern-security-architecture-66177cec8191
+- https://www.geeksforgeeks.org/android/android-architecture/
+- https://www.mobilehackinglab.com/course/free-android-application-security-course?srsltid=AfmBOor8pumN0PXavvE8t3PPQtTtdyJmlnvbyMQTSdXnNN2DNq6nTI76
+- https://source.android.com/docs/security/features
+- https://www.nomidmdm.com/en/blog/fortify-your-fleet-mastering-android-16s-new-security-architecture
+- https://asappstudio.com/android-security-2026/
+- https://ingenrieth-online.de/en/news/detail/android-16-a-new-era-of-security-and-a-return-to-old-dilemmas
+- https://arxiv.org/html/1904.05572v3
+- https://blog.cortado.com/en/android-security-for-businesses/
+- https://opensecurityarchitecture.org/patterns/sp-003/
+- https://opensecurityarchitecture.org/
+
+- https://www.youtube.com/watch?v=1AsvIt7bSLY
+- https://www.arm.com/architecture/security-features
+- https://newsroom.arm.com/blog/arm-security-architecture
+- https://taesoo.kim/pubs/2025/sang:portal.pdf
+- https://go.rambus.com/security-in-the-arm-ecosystem
+- https://go.rambus.com/l/803123/2020-12-28/2gswpc/803123/16091819127LWhUfFD/Security_in_the_ARM_Ecosystem_white_paper.pdf
+- https://ignitarium.com/understanding-security-and-safety-in-modern-soc-designs-part-3/
+- https://www.researchgate.net/figure/ARM-Security-Architecture-SMC-Fundamentals-3-4_fig1_397992522
+- https://www.allaboutcircuits.com/news/arm-puts-security-architecture-to-test-with-new-soc-and-demonstrator-board/
+- https://www.linkedin.com/pulse/monitor-mode-arm-architecture-part-1-anupam-datta-tf4kc
+- https://2wisebit.wordpress.com/2025/01/04/monitor-mode-in-arm-architecture-part-1/
+- https://2wisebit.wordpress.com/author/anupamon/
+- https://www.arm.com/architecture/security-features/platform-security
+- https://www.stromasys.com/resources/risc-v-vs-arm-processors-comparative-analysis/
+
+- https://armur.ai/security-fundamentals/web/web/understanding-linux-security-architecture/
+- https://dev.to/secbyshresth/the-linux-security-architecture-pam-capabilities-mac-beyond-8d9
+- https://www.cclabs.dev/blog/linux-os-architecture-cybersecurity
+- https://medium.com/@shresthpaul133/the-linux-security-architecture-pam-capabilities-mac-beyond-526814b197e9
+- https://www.cyberark.com/resources/blog/modern-cybersecurity-strategies-for-linux-servers
+- https://linuxsecurity.com/features/linux-security-tools-hardening
+- https://tuxcare.com/blog/linux-server-security/
+- https://www.suse.com/c/linux-hardeningthe-complete-guide-to-securing-your-systems/
+- https://www.ateamsystems.com/news/zero-trust-architecture-for-linux-a-new-era-of-security-for-modern-infrastructure/
+
+- https://semiengineering.com/exploring-the-security-framework-of-risc-v-architecture-in-modern-socs/
+- https://riscv.org/security/
+- https://medium.com/@mike.anderson007/the-rise-of-risc-v-architecture-f15940230940
+- https://hal.science/hal-03906564v1/document
+- https://www.preprints.org/manuscript/202510.0152
+- https://www.mdpi.com/2079-9292/14/21/4171
+- https://machaddr.substack.com/p/risc-v-architecture-an-open-revolution
+
 > Hardware Security Module (HSM)
 > HSM is perhaps the most overloaded term in the hardware security space. The term HSM is sometimes used to refer to any type of discrete hardware security device including a Secure Element or TPM. This is particularly true in the automotive market where Secure Elements are often referred to as a HSM.
 > In addition to being used as a generic term, an HSM also refers to large (and often expensive) hardware security appliances primarily used in data center operations. Context is therefore key to understanding how the term HSM is used.
